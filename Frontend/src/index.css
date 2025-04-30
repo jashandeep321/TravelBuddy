@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* General logo name styling */
+.logo-name {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.logo-name:hover {
+  color: #3f98a2; /* Changes the color on hover */
+  transform: scale(1.1); /* Slightly enlarges the logo on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .logo-name {
+    font-size: 1.5rem; /* Adjusts size for smaller screens */
+    padding: 5px;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
