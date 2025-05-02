@@ -1,5 +1,5 @@
 import React from 'react';
-import nature from '../media/nature.mp4';
+// import nature from '../media/nature.mp4';
 import './Hero.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,7 +10,7 @@ function HeroSec() {
   return (
     <div className="hero-section d-flex align-items-center justify-content-center text-center">
       <video className="video-background" autoPlay loop muted>
-        <source src={nature} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dzyb93kms/video/upload/v1746177132/nature_ln9jtc.mp4" type="video/mp4" />
       </video>
       <div className="content position-relative z-index-1 text-white">
         <h1 className='fw-bold m-3'>Discover Your Dream Destination</h1>
