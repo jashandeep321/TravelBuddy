@@ -6,80 +6,46 @@ import { isLoggedIn } from '../middlewares/isLoggedin.js';
 
 const router = express.Router();
 
-// Multer configuration
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Directory to save uploaded images
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname); // Unique filename
-  },
+router.post('/', isAdmin, async (req, res) => {
+try {
+  const newDestination = new Destination({ ...req.body });
+  await newDestination.save();
+  res.status(201).json(newDestination);
+} catch (error) {
+  res.status(500).json({ message: 'Error adding destination.', error: error.message });
+}
 });
 
-// File filter for images
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image/')) {
-    cb(null, true); // Accept file
-  } else {
-    cb(new Error('File must be an image'), false); // Reject file
-  }
-};
-
-const upload = multer({ storage, fileFilter });
-
-// Routes
 
 // Get all destinations
 router.get('/', async (req, res) => {
   try {
     const destinations = await Destination.find();
-    res.json(destinations);
-  } catch (err) {
-    res.status(500).json({ message: 'Error retrieving destinations.' });
-  }
-});
-
-// Get destination by ID
-router.get('/:id', isLoggedIn, async (req, res) => {
-  try {
-    const destination = await Destination.findById(req.params.id);
-    if (!destination) {
-      return res.status(404).json({ message: 'Destination not found.' });
-    }
-    res.json(destination);
+    res.status(200).json(destinations);
   } catch (error) {
-    res.status(500).json({ message: 'Error retrieving destination.' });
+    res.status(500).json({ message: 'Error fetching destinations.', error: error.message });
   }
 });
 
-// Add a new destination with image upload
-router.post('/', isAdmin, upload.single('image'), async (req, res) => {
-  try {
-    const newDestination = new Destination({
-      ...req.body,
-      image: req.file ? req.file.path : null, // Save image path in DB
-    });
-    await newDestination.save();
-    res.status(201).json(newDestination);
-  } catch (error) {
-    res.status(500).json({ message: 'Error adding destination.' });
-  }
-});
 
-// Update a destination with image upload
-router.put('/:id', isAdmin, upload.single('image'), async (req, res) => {
+router.put('/:id', isAdmin, async (req, res) => {
   try {
-    const updateData = { ...req.body };
-    if (req.file) {
-      updateData.image = req.file.path; // Update image path if a new image is uploaded
-    }
-    const updatedDestination = await Destination.findByIdAndUpdate(req.params.id, updateData, { new: true });
+    const updatedDestination = await Destination.findByIdAndUpdate(
+      req.params.id,
+      { ...req.body },
+      { new: true }
+    );
+
     if (!updatedDestination) return res.status(404).json({ message: 'Destination not found.' });
     res.json(updatedDestination);
   } catch (error) {
-    res.status(500).json({ message: 'Error updating destination.' });
+    res.status(500).json({ message: 'Error updating destination.', error: error.message });
   }
 });
+
+
+
+
 
 // Delete a destination
 router.delete('/:id', isAdmin, async (req, res) => {
@@ -92,4 +58,27 @@ router.delete('/:id', isAdmin, async (req, res) => {
   }
 });
 
+router.get('/slug/:slug', async (req, res) => {
+  try {
+    const destination = await Destination.findOne({ slug: req.params.slug });
+    if (!destination) return res.status(404).json({ message: 'Destination not found' });
+    res.status(200).json(destination);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching destination.', error: error.message });
+  }
+});
+
+
+// TEMPORARY: Bulk insert destinations (no auth, no image upload)
+router.post('/bulk', async (req, res) => {
+  try {
+    const destinations = await Destination.insertMany(req.body); // expects array
+    res.status(201).json({ message: 'Bulk destinations added!', count: destinations.length });
+  } catch (error) {
+    res.status(500).json({ message: 'Error during bulk insertion.', error: error.message });
+  }
+});
+
 export default router;
+
+

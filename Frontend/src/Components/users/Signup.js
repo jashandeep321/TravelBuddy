@@ -27,7 +27,7 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4444/VoyageVista/user/register', signupData);
+      const response = await axios.post('http://localhost:4444/TravelBuddy/user/register', signupData);
       if (response.status === 200) {
         alert('Signup successful!');
         setSignupData({ username: '', email: '', password: '' });
@@ -46,7 +46,7 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4444/VoyageVista/user/login', loginData);
+      const response = await axios.post('http://localhost:4444/TravelBuddy/user/login', loginData);
       if (response.status === 200) {
         alert('Login successful!');
         setLoginData({ email: '', password: '' });

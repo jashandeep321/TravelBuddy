@@ -58,4 +58,14 @@ router.post("/login", async (req, res) => {
     }
 });
 
+router.get("/all", async (req, res) => {
+    try {
+        const users = await User.find({}, "-password"); // exclude password for security
+        res.status(200).json(users);
+    } catch (err) {
+        console.error("Error fetching users:", err);
+        res.status(500).json({ message: "Server error while fetching users." });
+    }
+});
+
 export default router;

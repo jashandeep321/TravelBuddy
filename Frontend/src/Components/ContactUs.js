@@ -25,7 +25,7 @@ const ContactUs = () => {
 
     try {
       // Send data to the backend API
-      const response = await axios.post('http://localhost:4444/VoyageVista/contactus', formData);
+      const response = await axios.post('http://localhost:4444/TravelBuddy/contactus', formData);
       console.log('Response:', response.data);
 
       // Success message

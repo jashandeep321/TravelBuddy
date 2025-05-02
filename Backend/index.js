@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/uploads', express.static('uploads'));
 app.use(express.json());
-app.use("/VoyageVista",GeminiAPI);
-app.use("/VoyageVista/user",userpath);
-app.use("/VoyageVista/admin",adminpath);
-app.use("/VoyageVista/contactus",contactus);
-app.use("/VoyageVista/destinations", destinationpath);
+app.use("/TravelBuddy", GeminiAPI);
+app.use("/TravelBuddy/user", userpath);
+app.use("/TravelBuddy/admin", adminpath);
+app.use("/TravelBuddy/contactus", contactus);
+app.use("/TravelBuddy/destinations", destinationpath);
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
     mongoose.connect('mongodb://127.0.0.1:27017/travelDB').then(() => console.log('Connected to Database!'));

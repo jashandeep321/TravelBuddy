@@ -11,28 +11,14 @@ import Beach_Destinations from './Components/Destination_pages/BeachDes';
 import City_Destinations from './Components/Destination_pages/CityDes' ;
 import Mountain_Destinations from './Components/Destination_pages/MountainDes' ;
 import Nature_Destinations from './Components/Destination_pages/NatureDes' ;
+import Destination from './Components/Destination_pages/Destination'; 
 // import Navbar from './Components/Header';
 import "bootstrap/dist/css/bootstrap.min.css"
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <Home /> */}
-      <Navigation/>
+       
       <Routes>
 
 <Route path="/Signup" element={<Signup />} />
@@ -46,6 +32,9 @@ function App() {
 <Route path='/Mountain_Destinations' element={<Mountain_Destinations/>}/>
 <Route path='/Nature_Destinations' element={<Nature_Destinations/>}/>
 <Route path='/City_Destinations' element={<City_Destinations/>}/>
+
+<Route path='/destination/:slug' element={<Destination />}/>
+
 </Routes>
         
         

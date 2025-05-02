@@ -32,7 +32,7 @@ function Navigation() {
 
     try {
       // Send data to the backend for itinerary generation
-      const response = await axios.post('http://localhost:4444/VoyageVista/itinerary', {
+      const response = await axios.post('http://localhost:4444/TravelBuddy/itinerary', {
         destination,
         duration,
         preferences,
