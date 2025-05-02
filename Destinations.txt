@@ -1,0 +1,329 @@
+
+
+Mongo Db data Set
+
+
+[
+    {
+      "name": "Paris",
+      "description": "Paris, the enchanting capital of France, is known for its artistic legacy, charming boulevards, and café culture. Iconic attractions include the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. The city is a global center for art, fashion, and culture. Paris is home to world-renowned landmarks like the Arc de Triomphe, Montmartre, and the Seine River, which adds to its romantic atmosphere. Whether you're visiting iconic museums or enjoying a glass of wine at a sidewalk café, Paris offers a blend of history and modernity that makes it a top destination for travelers. Don't miss the chance to explore its vibrant neighborhoods and world-class shopping streets, such as the Champs-Élysées and Le Marais.",
+      "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746091234/paris_gvbz4j.jpg",
+      "baseImages": [
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-1_nvg8m3.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-4_ogtivh.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-2_j1xhv6.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-3_nxb7of.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-5_qggcsl.jpg"
+      ],
+      "category": "city",
+      "location": "France",
+      "placesToVisit": [
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Notre-Dame Cathedral",
+        "Montmartre"
+      ],
+      "foodToTry": [
+        "Croissant",
+        "Escargot",
+        "Baguette",
+        "Coq au vin"
+      ],
+      "languages": [
+        "French"
+      ],
+      "whenNotToVisit": "July and August (peak tourist season)",
+      "bestTimeToVisit": "April to June and September to November",
+      "transportation": [
+        "Metro",
+        "Bus",
+        "Bicycle",
+        "Walking"
+      ],
+      "stars": "4.7",
+      "price": "₹90000"
+    },
+
+
+
+
+    {
+      "name": "Bali",
+      "description": "Bali is a lush Indonesian island famed for its forested volcanic mountains, iconic rice paddies, coral reefs, and vibrant nightlife. It's also known for yoga retreats and temples. Bali is a perfect destination for travelers seeking natural beauty and relaxation, as well as adventure and cultural experiences. The island boasts stunning beaches like Kuta and Seminyak, where visitors can enjoy surfing, diving, and sunbathing. Bali's spiritual atmosphere is reflected in its many temples, including the beautiful Tanah Lot and Uluwatu Temple. Bali is also home to charming villages and rice terraces, especially in Ubud, offering a tranquil retreat. Whether you're hiking up an active volcano, exploring traditional Balinese markets, or simply unwinding in luxury resorts, Bali promises a rejuvenating and enriching experience.",
+      "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746125508/bali_dae02l.jpg",
+      "baseImages": [
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746125493/bali5_mxncx4.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746125493/bali4_ktfnut.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746125493/bali2_hkyfam.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746125493/bali3_fz0y88.jpg"
+      ],
+      "category": "beach",
+      "location": "Indonesia",
+      "placesToVisit": [
+        "Uluwatu Temple",
+        "Sacred Monkey Forest",
+        "Tanah Lot",
+        "Besakih Temple"
+      ],
+      "foodToTry": [
+        "Babi Guling",
+        "Bali Satay",
+        "Nasi Goreng",
+        "Ayam Betutu"
+      ],
+      "languages": [
+        "Balinese",
+        "Indonesian"
+      ],
+      "whenNotToVisit": "November to March (rainy season)",
+      "bestTimeToVisit": "April to October",
+      "transportation": [
+        "Scooter",
+        "Private car",
+        "Tuk-tuk",
+        "Walking"
+      ],
+      "stars": "4.5",
+      "price": "₹75000"
+    },
+
+
+
+    {
+      "name": "New York",
+      "description": "New York City is a global hub for culture, fashion, and finance. Visit Central Park, Times Square, the Statue of Liberty, and world-class museums all in one city. The city that never sleeps offers an eclectic mix of towering skyscrapers, vibrant neighborhoods, and endless activities. Explore iconic landmarks like the Empire State Building, Brooklyn Bridge, and Fifth Avenue, or enjoy the cultural richness of Broadway and the Metropolitan Museum of Art. New York's culinary scene is unparalleled, from street vendors offering classic New York-style pizza and bagels to Michelin-starred restaurants serving exquisite global cuisines. Whether you're shopping in SoHo, catching a Broadway show, or strolling through the High Line park, New York provides an unmatched urban experience.",
+      "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128405/newyork_jt1yt5.jpg",
+      "baseImages": [
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128504/nyc1_okddnb.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128406/nyc_iqbxyh.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128399/nyc2_k4k3re.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128993/nyc3_vpkkl1.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746129449/nyc5_wewp2m.jpg"
+      ],
+      "category": "city",
+      "location": "USA",
+      "placesToVisit": [
+        "Central Park",
+        "Times Square",
+        "Statue of Liberty",
+        "Metropolitan Museum of Art"
+      ],
+      "foodToTry": [
+        "New York-style pizza",
+        "Bagels",
+        "Hot dogs",
+        "Cheesecake"
+      ],
+      "languages": [
+        "English"
+      ],
+      "whenNotToVisit": "Winter months (December to February) due to cold weather",
+      "bestTimeToVisit": "April to June and September to early November",
+      "transportation": [
+        "Subway",
+        "Taxi",
+        "Bus",
+        "Walking"
+      ],
+      "stars": "4.6",
+      "price": "₹120000"
+    }
+    ,
+
+    {
+      "name": "Amazon Rainforest",
+      "description": "The Amazon Rainforest is Earth's largest and most diverse tropical ecosystem, spanning across multiple South American countries. Home to millions of species of plants and animals, it is often called 'the lungs of the planet' due to its vast greenery and oxygen production. Visitors can explore the dense jungle by boat, venture deep into indigenous communities, or witness exotic wildlife like jaguars, macaws, and pink river dolphins. The Amazon River itself is a majestic waterway that winds through the heart of the rainforest, providing endless opportunities for adventure. The Meeting of Waters, where the dark Rio Negro meets the sandy-colored Amazon River, is a fascinating natural phenomenon. Visitors can also partake in jungle treks, piranha fishing, and nighttime wildlife spotting. For those seeking an immersive experience in nature, the Amazon Rainforest is an unparalleled destination.",
+      "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128292/amazon_k33ms9.jpg",
+      "baseImages": [
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128285/amazon1_ek3bkg.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128285/amazon2_qfmbht.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128286/amazon4_oajudr.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128285/amazon3_uerdbk.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128286/amazon5_rlgpwa.jpg"
+      ],
+      "category": "nature",
+      "location": "Brazil, Peru, Colombia",
+      "placesToVisit": ["Manaus", "Iquitos", "Tambopata Reserve", "The Meeting of Waters"],
+      "foodToTry": ["Tacacá", "Moqueca", "Açaí", "Pato no Tucupi"],
+      "languages": ["Portuguese", "Spanish"],
+      "whenNotToVisit": "December to May (rainy season)",
+      "bestTimeToVisit": "June to November",
+      "stars": "4.5",
+      "price": "₹75000"
+    }
+     
+
+        ,
+
+
+            {
+              "name": "Hawaii",
+              "description": "Hawaii is a tropical paradise known for its breathtaking beaches, lush rainforests, and volcanic landscapes. The islands offer a perfect blend of adventure and relaxation, with opportunities to surf the legendary waves of Waikiki Beach, hike through volcanic terrain in Haleakalā National Park, and dive into the pristine waters of Hanauma Bay. The aloha spirit is reflected in the vibrant culture, where hula dancing, traditional luaus, and ukulele melodies create an enchanting atmosphere. Visitors can explore the dramatic cliffs of the Na Pali Coast, witness the fiery spectacle of active volcanoes, or soak in the laid-back island lifestyle. Whether enjoying fresh poke bowls, watching the sunrise atop a dormant volcano, or simply unwinding on golden sands, Hawaii is an idyllic getaway for nature lovers and beach enthusiasts alike.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130177/hawaii4_cu2qgn.webp",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130171/hawaii1_dg7ug5.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130172/hawaii2_toyof0.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130173/hawaii3_ei1odi.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130175/hawaii_ryname.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130179/hawaii5_ogqfsf.webp"
+          ],
+              "category": "beach",
+              "location": "USA",
+              "placesToVisit": ["Waikiki Beach", "Diamond Head", "Haleakalā National Park", "Volcanoes National Park"],
+              "foodToTry": ["Poke", "Loco Moco", "Spam Musubi", "Shave Ice"],
+              "languages": ["English", "Hawaiian"],
+              "whenNotToVisit": "November to March (rainy season)",
+              "bestTimeToVisit": "April to October",
+              "stars": "4.5",
+              "price": "₹75000"
+            },
+
+
+
+            {
+              "name": "Maldives",
+              "description": "The Maldives is a mesmerizing island nation renowned for its crystalline waters, overwater villas, and abundant marine life. This luxury destination is a haven for honeymooners and diving enthusiasts alike, offering some of the world's most stunning coral reefs, where snorkeling and diving unveil a vibrant underwater paradise. The islands are dotted with exclusive resorts that provide a serene escape, allowing guests to enjoy private beaches, spa retreats, and romantic sunset cruises. Visitors can explore local fishing villages, indulge in fresh seafood delicacies, or simply bask in the beauty of secluded sandy atolls. The Maldives offers a tranquil retreat, where turquoise waters stretch endlessly and every sunrise feels like a dream.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128393/Maldives4_o1zzby.webp",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128390/maldives_xjlnbo.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128392/Maldives3_aiqdwy.webp",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128392/Maldives2_qbncrb.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128388/Maldives1_azelyq.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128395/Maldives5_chnnxo.webp"
+          ],
+              "category": "beach",
+              "location": "Maldives",
+              "placesToVisit": ["Manta Point", "Maafushi", "Banana Reef", "Sun Island"],
+              "foodToTry": ["Mas Huni", "Garudhiya", "Fried Fish"],
+              "languages": ["Dhivehi"],
+              "whenNotToVisit": "May to October (monsoon season)",
+              "bestTimeToVisit": "November to April",
+              "stars": "4.5",
+              "price": "₹75000"
+            }
+            
+            
+            ,
+
+
+
+            {
+              "name": "Himalayas",
+              "description": "The Himalayas, the world's tallest mountain range, offer breathtaking landscapes, adventurous trekking routes, and serene spiritual retreats. Spanning multiple countries, this majestic region is home to Mount Everest, the highest peak on Earth, as well as culturally rich settlements that preserve centuries-old traditions. Visitors can trek through Manali, explore the sacred Bodhnath Stupa, or experience the divine tranquility of Mount Kailash. The air is crisp, the scenery awe-inspiring, and the journey through the Himalayas is both physically challenging and spiritually rewarding. Whether embracing the peaceful monasteries of Bhutan or conquering rugged trails in Nepal, the Himalayas remain a destination unlike any other, attracting adventurers and seekers of solitude alike.",
+              "bannerImage": "",
+          "baseImages": [
+           "",
+           "",
+           "",
+           "",
+           ""
+          ],
+              "category": "mountain",
+              "location": "India, Nepal, Bhutan, Tibet",
+              "placesToVisit": ["Mount Everest", "Kailash", "Bodhnath Stupa", "Manali"],
+              "foodToTry": ["Momos", "Thukpa", "Dal Bhat", "Sukuti"],
+              "languages": ["Hindi", "Nepali", "Tibetan"],
+              "whenNotToVisit": "June to August (monsoon season)",
+              "bestTimeToVisit": "March to May and September to November",
+              "stars": "4.5",
+              "price": "₹75000"
+            }
+
+
+
+          ,
+
+
+            {
+              "name": "Jaipur",
+              "description": "Jaipur, also known as the 'Pink City,' is a regal destination steeped in history, grandeur, and architectural brilliance. As the capital of Rajasthan, Jaipur showcases stunning palaces, vibrant bazaars, and imposing forts that tell tales of a glorious past. The Amer Fort is a breathtaking blend of Rajput architecture, while the Hawa Mahal’s intricate facade is a photographer’s dream. Visitors can explore the City Palace, marvel at the celestial wonders of Jantar Mantar, or indulge in traditional Rajasthani cuisine. The bustling markets of Johari Bazaar and Bapu Bazaar offer exquisite jewelry, colorful textiles, and handcrafted souvenirs. Whether admiring the grandeur of Nahargarh Fort, attending a cultural dance performance, or enjoying an elephant ride, Jaipur is a destination that seamlessly blends royal elegance with local charm.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130179/jaipur_lmte1c.jpg",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130181/jaipur1_e9acq4.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130182/jaipur2_dzprt9.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130184/jaipur3_cferuv.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130186/jaipur4_gwvrjl.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130190/jaipur5_dtnwjm.jpg"
+          ],
+              "category": "city",
+              "location": "India",
+              "placesToVisit": ["Amer Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
+              "foodToTry": ["Dal Baati Churma", "Laal Maas", "Kachori", "Ghewar"],
+              "languages": ["Hindi", "Rajasthani"],
+              "whenNotToVisit": "May to June (intense summer heat)",
+              "bestTimeToVisit": "October to March",
+              "stars": "4.5",
+              "price": "₹50000"
+            },
+            {
+              "name": "Goa",
+              "description": "Goa, India's tropical gem, is renowned for its sun-kissed beaches, Portuguese heritage, and vibrant nightlife. Whether lounging at Palolem Beach, experiencing thrilling water sports in Baga, or exploring the stunning architecture of Basilica of Bom Jesus, Goa offers a perfect mix of relaxation and excitement. The coastal state’s lush green landscapes and charming villages provide a refreshing contrast to its bustling party scene. Visitors can explore spice plantations, take river cruises, and discover hidden gems like Butterfly Beach. Goa is equally famous for its seafood delights, beachside shacks, and local markets selling handmade crafts. Whether savoring a fiery Goan curry, enjoying sunset views at Fort Aguada, or dancing at beach festivals, Goa’s laid-back vibe and coastal beauty make it an irresistible destination.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130163/goa_rsdn3y.jpg",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130163/goa1_wqqoxm.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130164/goa2_maukxc.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130165/goa3_pkzai4.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130165/goa3_pkzai4.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130169/goa5_nk4iie.jpg"
+          ],
+              "category": "beach",
+              "location": "India",
+              "placesToVisit": ["Palolem Beach", "Basilica of Bom Jesus", "Fort Aguada", "Dudhsagar Falls"],
+              "foodToTry": ["Goan Fish Curry", "Vindaloo", "Bebinca", "Prawn Balchao"],
+              "languages": ["Konkani", "Hindi", "English"],
+              "whenNotToVisit": "June to September (monsoon season)",
+              "bestTimeToVisit": "November to February",
+              "stars": "4.5",
+              "price": "₹60000"
+            }
+            
+            
+            ,
+
+
+
+            {
+              "name": "Kerala",
+              "description": "Kerala, often called 'God’s Own Country,' is a serene paradise known for its backwaters, lush greenery, and rich traditions. The emerald waterways of Alleppey offer tranquil houseboat cruises, while the rolling tea plantations of Munnar create a picture-perfect escape. The state’s coastline is dotted with pristine beaches like Varkala and Kovalam, ideal for sunbathing and relaxation. Visitors can witness the mesmerizing Kathakali performances, enjoy Ayurvedic wellness retreats, and explore the vibrant spice markets of Kochi. Kerala’s wildlife sanctuaries, such as Periyar National Park, provide opportunities to see elephants and exotic birds in their natural habitat. Whether indulging in fresh seafood, enjoying a sunset at Marari Beach, or experiencing the tranquility of a floating village, Kerala is a destination that soothes the soul with its unspoiled beauty.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128372/kerala_afmgze.jpg",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128372/kerala1_tf0lbn.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128373/kerala2_db4g9l.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128373/kerala3_xpmj3v.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128373/kerala4_apczjl.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128373/kerala5_jf5zer.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128373/kerala4_apczjl.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128374/kerala6_xm59uk.jpg"
+          ],
+              "category": "nature",
+              "location": "India",
+              "placesToVisit": ["Alleppey", "Munnar", "Kovalam", "Periyar National Park", "Great K V Kathakali Center", "Jew Town"],
+              "foodToTry": ["Appam with Stew", "Puttu and Kadala Curry", "Karimeen Pollichathu", "Sadya"],
+              "languages": ["Malayalam", "English"],
+              "whenNotToVisit": "June to August (heavy monsoon season)",
+              "bestTimeToVisit": "September to March",
+              "stars": "4.5",
+              "price": "₹55000"
+            },
+            {
+              "name": "Ladakh",
+              "description": "Ladakh, a high-altitude desert in northern India, is a destination that captivates with its rugged beauty, serene monasteries, and breathtaking landscapes. Nestled between the Himalayas and the Karakoram ranges, Ladakh is home to crystal-clear lakes like Pangong and Tso Moriri, remote villages, and towering passes such as Khardung La. Travelers can explore centuries-old monasteries like Hemis and Thiksey, interact with warm and welcoming locals, and witness the mystical festivals of Leh. Adventure seekers flock to Ladakh for trekking, motorbiking, and river rafting experiences. The stark yet stunning landscapes, the Buddhist heritage, and the peaceful aura of this Himalayan region make it an unparalleled retreat for nature lovers and thrill-seekers alike.",
+              "bannerImage": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128381/ladakh_rexljq.jpg",
+          "baseImages": [
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128381/ladakh1_vgwrep.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128383/ladakh2_bdjmmt.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128382/ladakh3_tbzs6h.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128387/ladakh4_eyajsc.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128387/ladakh5_wwrrtb.jpg"
+          ],
+              "category": "mountain",
+              "location": "India",
+              "placesToVisit": ["Pangong Lake", "Khardung La", "Hemis Monastery", "Magnetic Hill"],
+              "foodToTry": ["Thukpa", "Momos", "Skyu", "Chhang"],
+              "languages": ["Ladakhi", "Hindi"],
+              "whenNotToVisit": "November to March (harsh winter season)",
+              "bestTimeToVisit": "May to September",
+              "stars": "4.5",
+              "price": "₹60000"
+            }
+          ]
