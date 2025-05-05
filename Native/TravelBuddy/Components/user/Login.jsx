@@ -8,15 +8,25 @@ import {
   View,
   Alert,
 } from 'react-native';
+
+import { useEffect ,useState } from 'react'
+import { ActivityIndicator } from 'react-native'
+import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native'
+
+
+
 import { TouchableOpacity, Text as RNText } from 'react-native';
 import {SafeAreaView } from 'react-native';
 
 const image = {uri: 'https://res.cloudinary.com/dzyb93kms/image/upload/v1746185447/WhatsApp_Image_2025-05-02_at_4.59.44_PM_qx7iei.jpg'};
 
 const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
+  console.log('Navigation object:', navigation);  
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -29,6 +39,7 @@ const Login = () => {
           value={email}
           placeholder="JohnDoe@gmail.com"
           placeholderTextColor="#ccc"
+          required
         />
 
         <TextInput
@@ -38,6 +49,7 @@ const Login = () => {
           placeholder="Password"
           placeholderTextColor="#ccc"
           secureTextEntry
+          required
         />
         {/* <View style={styles.buttonContainer}>
             <Button
@@ -47,8 +59,14 @@ const Login = () => {
             />
           </View> */}
 
-<TouchableOpacity style={styles.loginButton} onPress={() => Alert.alert('Login Successful.')}>
-  <RNText style={styles.loginButtonText}>Login</RNText>
+<TouchableOpacity
+ onPress={() => navigation.navigate('Destinations')}
+ style={styles.loginButton} 
+//  onPress={() => Alert.alert('Login Successful.')}
+ >
+  <RNText style={styles.loginButtonText}>
+    Login
+    </RNText>
 </TouchableOpacity>
 
           </View>
