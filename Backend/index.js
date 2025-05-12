@@ -26,3 +26,5 @@ app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
     mongoose.connect('mongodb://127.0.0.1:27017/travelDB').then(() => console.log('Connected to Database!'));
 })
+
+
