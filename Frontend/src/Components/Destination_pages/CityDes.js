@@ -1,44 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-
-import parisimg from '../images/destination-Img/paris.jpg';
-import baliimg from '../images/destination-Img/bali.jpg';
-import nyimg from '../images/destination-Img/newyork.jpg';
-import sydneyimg from '../images/destination-Img/sydney.jpg';
 import pin from '../images/destination-Img/pin.png';
 
-import tokyoimg from '../images/destination-Img/tokyo.jpg';
-import amazonimg from '../images/destination-Img/amazon.jpg';
-import romeimg from '../images/destination-Img/rome.jpg';
-import seoulimg from '../images/destination-Img/seoul.jpg';
-import himalayasimg from '../images/destination-Img/himalayas.jpg';
-import yellowstoneimg from '../images/destination-Img/yellowstone.jpg';
-import patagoniaimg from '../images/destination-Img/patagonia.jpg';
-import swissalpsimg from '../images/destination-Img/swissapls.jpg';
-import hawaiiimg from '../images/destination-Img/hawaii.jpg';
-import maldivesimg from '../images/destination-Img/maldives.jpg';
-
-const data = [
-    { id: 1, name: "Paris", description: "The city of light and love, known for its iconic Eiffel Tower and rich culture.", location: "France", image: parisimg, category: "city", slug: "paris" },
-    { id: 2, name: "Bali", description: "A tropical paradise with stunning beaches and vibrant culture.", location: "Indonesia", image: baliimg, category: "Beach", slug: "bali" },
-    { id: 3, name: "New York", description: "The city that never sleeps, famous for its skyline and bustling streets.", location: "USA", image: nyimg, category: "city", slug: "new-york" },
-    { id: 4, name: "Sydney", description: "Known for the Sydney Opera House, Harbour Bridge, and beautiful beaches.", location: "Australia", image: sydneyimg, category: "beach", slug: "sydney" },
-    { id: 5, name: "Amazon Rainforest", description: "Unparalleled biodiversity and a haven for adventure seekers.", location: "South America", image: amazonimg, category: "nature", slug: "amazon-rainforest" },
-    { id: 6, name: "Yellowstone", description: "Home to geothermal wonders like Old Faithful and a variety of wildlife.", location: "USA", image: yellowstoneimg, category: "nature", slug: "yellowstone" },
-    { id: 7, name: "Tokyo", description: "A bustling metropolis where futuristic technology meets ancient traditions.", location: "Japan", image: tokyoimg, category: "city", slug: "tokyo" },
-    { id: 8, name: "Patagonia", description: "Rugged landscapes and breathtaking vistas await in this outdoor paradise.", location: "Chile & Argentina", image: patagoniaimg, category: "mountain", slug: "patagonia" },
-    { id: 9, name: "Swiss Alps", description: "Majestic peaks and world-class skiing make it a must-visit destination.", location: "Switzerland", image: swissalpsimg, category: "mountain", slug: "swiss-alps" },
-    { id: 10, name: "Hawaii", description: "A tropical paradise with diverse landscapes and stunning beaches.", location: "USA", image: hawaiiimg, category: "beach", slug: "hawaii" },
-    { id: 11, name: "Maldives", description: "Known for luxurious overwater villas and crystal-clear waters.", location: "Indian Ocean", image: maldivesimg, category: "beach", slug: "maldives" },
-    { id: 12, name: "Himalayas", description: "A mountain range with unmatched scenic beauty and thrilling adventures.", location: "Asia", image: himalayasimg, category: "mountain", slug: "himalayas" },
-    { id: 13, name: "Seoul", description: "A vibrant city blending traditional palaces with K-pop culture.", location: "South Korea", image: seoulimg, category: "city", slug: "seoul" },
-    { id: 14, name: "Rome", description: "An open-air museum of ancient ruins and Renaissance art.", location: "Italy", image: romeimg, category: "city", slug: "rome" }
-];
-
 function CityDes() {
-    const filteredData = data.filter(destination => destination.category.toLowerCase() === "city");
+    const [cityDestinations, setCityDestinations] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+        const fetchCityData = async () => {
+            try {
+                const response = await axios.get('http://localhost:4444/TravelBuddy/destinations');
+                const filtered = response.data.filter(dest => dest.category.toLowerCase() === 'city'); // ✅ Fixed: 'city'
+                setCityDestinations(filtered);
+                setLoading(false);
+            } catch (err) {
+                console.error(err);
+                setError('Failed to load city destinations.');
+                setLoading(false);
+            }
+        };
 
+        fetchCityData();
+    }, []);
+  
+    if (loading) return <div className="p-5">Loading city destinations...</div>;
+    if (error) return <div className="p-5 text-danger">{error}</div>;
+  
     return (
         <div className="p-5" style={{ background: 'rgb(245, 245, 245)' }}>
             <h1 className="fw-bold pt-5" style={{ fontFamily: 'Courier New' }}>
@@ -49,7 +39,7 @@ function CityDes() {
             </p>
             <div className="container">
                 <div className="row justify-content-center pt-3">
-                    {filteredData.map((destination, index) => (
+                    {cityDestinations.map((destination, index) => (
                         <div key={index} className="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
                             <Link to={`/destination/${destination.slug}`} className="text-decoration-none">
                                 <Card style={{
@@ -60,7 +50,7 @@ function CityDes() {
                                 }}>
                                     <Card.Img
                                         variant="top"
-                                        src={destination.image}
+                                        src={destination.bannerImage}
                                         alt={destination.name}
                                         style={{
                                             borderTopLeftRadius: '10px',
@@ -73,8 +63,8 @@ function CityDes() {
                                         <Card.Title className="fw-bold" style={{ textAlign: 'start', fontSize: '1.4rem', marginBottom: '10px' }}>
                                             {destination.name}
                                         </Card.Title>
-                                        <Card.Text className="text-secondary" style={{ textAlign: 'start', fontSize: '0.75rem', marginBottom: '10px' }}>
-                                            {destination.description}
+                                        <Card.Text className="text-secondary">
+                                            {destination.description.split(' ').slice(0, 12).join(' ')}...
                                         </Card.Text>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <div className="d-flex align-items-center">
