@@ -14,7 +14,7 @@ import packageRoutes from './routes/package.js';
 const PORT=4444 || process.env.PORT;
 
 app.use(cors({
-     origin: 'https://travelbuddy-7edk.onrender.com', 
+     origin: ['https://travelbuddy-7edk.onrender.com','http://localhost:3000' ],
   credentials: true,
 }));
 app.use(bodyParser.json());
