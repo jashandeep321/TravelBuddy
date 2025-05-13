@@ -65,7 +65,8 @@ const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/AllDestinations">Destinations</Nav.Link>
+              <Link className="nav-link" to="/AllDestinations">Destinations</Link>
+              {/* <Nav.Link href="/AllDestinations">Destinations</Nav.Link> */}
               <Link className="nav-link" to="/deals">Deals</Link>
               <Link className="nav-link" to="/about">About</Link>
               <Link className="nav-link" to="/contact">Contact Us</Link>
