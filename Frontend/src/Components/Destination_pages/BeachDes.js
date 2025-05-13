@@ -13,7 +13,7 @@ function BeachDestinations() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/destinations`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/TravelBuddy/destinations`);
                 const beachData = response.data.filter(dest => dest.category.toLowerCase() === 'beach');
                 setBeachDestinations(beachData);
                 setLoading(false);

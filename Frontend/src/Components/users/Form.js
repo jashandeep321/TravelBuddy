@@ -33,7 +33,7 @@ const Form = () => {
     e.preventDefault();
     setLoading(true); // Start loader
     try {
-      const response = await axios.post('http://localhost:4444/TravelBuddy/user/register', signupData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/register`, signupData);
       if (response.status === 200) {
         alert('Signup successful!');
         setSignupData({ username: '', email: '', password: '' });
@@ -50,7 +50,7 @@ const Form = () => {
     e.preventDefault();
     setLoading(true); // Start loader
     try {
-      const response = await axios.post('http://localhost:4444/TravelBuddy/user/login', loginData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/login`, loginData);
       if (response.status === 200) {
         alert('Login successful!');
         setLoginData({ username: '', password: '' });

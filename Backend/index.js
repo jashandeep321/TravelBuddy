@@ -13,7 +13,10 @@ import contactus from "./routes/contactAPI.js";
 import packageRoutes from './routes/package.js';
 const PORT=4444 || process.env.PORT;
 
-app.use(cors());
+app.use(cors({
+     origin: 'https://travelbuddy-7edk.onrender.com', 
+  credentials: true,
+}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/uploads', express.static('uploads'));

@@ -14,7 +14,7 @@ function AllDestinations() {
         // Fetch data from the API
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/destinations`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/TravelBuddy/destinations`);
                 setData(response.data);
                 setLoading(false);
             } catch (err) {

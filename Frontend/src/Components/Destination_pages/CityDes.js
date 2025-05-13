@@ -12,7 +12,7 @@ function CityDes() {
     useEffect(() => {
         const fetchCityData = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/destinations`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/TravelBuddy/destinations`);
                 const filtered = response.data.filter(dest => dest.category.toLowerCase() === 'city'); // ✅ Fixed: 'city'
                 setCityDestinations(filtered);
                 setLoading(false);
