@@ -2,23 +2,23 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import reviews from '../media/rewiew.jpg';
-const review = [
-    {
-        id: 1,
-        name: "John Doe",
-        rating: 5,
-        comment: "Amazing experience!",
-        avatar: "path-to-avatar-image.jpg",
-    },
-    {
-        id: 2,
-        name: "Jane Smith",
-        rating: 4,
-        comment: "Beautiful destination!",
-        avatar: "path-to-avatar-image.jpg",
-    },
-    // Add more reviews as needed
-];
+// const review = [
+//     {
+//         id: 1,
+//         name: "John Doe",
+//         rating: 5,
+//         comment: "Amazing experience!",
+//         avatar: "path-to-avatar-image.jpg",
+//     },
+//     {
+//         id: 2,
+//         name: "Jane Smith",
+//         rating: 4,
+//         comment: "Beautiful destination!",
+//         avatar: "path-to-avatar-image.jpg",
+//     },
+//     // Add more reviews as needed
+// ];
 
 function Stories() {
     return (
