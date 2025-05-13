@@ -26,5 +26,10 @@ app.use("/TravelBuddy/destinations", destinationpath);
 app.use('/TravelBuddy/packages', packageRoutes);
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
-    mongoose.connect('mongodb://127.0.0.1:27017/travelDB').then(() => console.log('Connected to Database!'));
+    // mongoose.connect('mongodb://127.0.0.1:27017/travelDB').then(() => console.log('Connected to Database!'));
+    mongoose.connect(process.env.MONGO_URI).then(() => {
+    console.log('Connected to MongoDB Atlas!');
+}).catch((err) => {
+    console.error('Error connecting to MongoDB Atlas:', err);
+});
 })
