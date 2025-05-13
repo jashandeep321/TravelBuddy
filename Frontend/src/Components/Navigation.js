@@ -6,6 +6,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import { BrowserRouter as Routes, Route, Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
+import logo1 from './images/logo1.png';
+import { useCart } from '../Context/CartContext';
 
 function Navigation() {
   const [showModal, setShowModal] = useState(false);
@@ -16,6 +19,8 @@ function Navigation() {
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
 
+  const { cartItems } = useCart();
+const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   // Show/hide modal handlers
   const handleShow = () => setShowModal(true);
   const handleClose = () => {
@@ -50,10 +55,12 @@ function Navigation() {
   return (
     <>
       {/* Navigation Bar */}
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary p-0">
         <Container>
-          <Link to="/">
-            <Navbar.Brand>Travel Buddy</Navbar.Brand>
+          <Link to="/"><Navbar.Brand>
+            <img src={logo1} alt="Logo" style={{ height: '3em', verticalAlign: 'middle', margin: '0 5px' }} />
+          </Navbar.Brand>
+
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -65,7 +72,27 @@ function Navigation() {
               <Link to="/Signup">
                 <Button variant="light">Sign In</Button>
               </Link>
-              <Button variant="light" onClick={handleShow}>Itinerary</Button>
+              <Button className='pb-3' variant="light" onClick={handleShow}>Itinerary</Button>
+
+              <Link className="nav-link position-relative" to="/cart">
+                <FaShoppingCart size={28} />
+                {itemCount > 0 && (
+                  <span
+                    className="position-absolute translate-middle bg-danger border border-light rounded-circle d-flex justify-content-center align-items-center"
+                    style={{
+                      width: '18px',
+                      height: '18px',
+                      bottom: '15px',
+                      right: '-10px',
+                      fontSize: '0.7rem',
+                      color: 'white',
+                    }}
+                  >
+                    {itemCount}
+                  </span>
+                )}
+              </Link>
+
             </Nav>
           </Navbar.Collapse>
         </Container>

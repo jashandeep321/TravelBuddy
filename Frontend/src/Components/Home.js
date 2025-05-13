@@ -4,6 +4,7 @@ import Destinations from "./Destinations";
 import Inspo from "./Inspo";
 import Stories from "./Stories";
 import Footer from "./Footer";
+import PackageSec from "./PackageSec";
 
 function Home() {
     return (
@@ -12,6 +13,7 @@ function Home() {
         <HeroSec/>
         <Destinations/>
         <Inspo/>
+        <PackageSec/>
         <Stories/>
         <Footer/>
         {/* <Header/> */}

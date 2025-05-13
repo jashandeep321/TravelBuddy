@@ -12,10 +12,16 @@ import City_Destinations from './Components/Destination_pages/CityDes' ;
 import Mountain_Destinations from './Components/Destination_pages/MountainDes' ;
 import Nature_Destinations from './Components/Destination_pages/NatureDes' ;
 import Destination from './Components/Destination_pages/Destination'; 
+import { CartProvider } from './Context/CartContext';
+import CartPage from './pages/CartPage';
 // import Navbar from './Components/Header';
 import "bootstrap/dist/css/bootstrap.min.css"
+import Packages from './Components/Destination_pages/Packages' ;
+import PackageDetails from './Components/Destination_pages/PackageDetails';
+
 function App() {
   return (
+     <CartProvider>
     <Router>
       <div className="App">
       <Navigation/>
@@ -28,18 +34,22 @@ function App() {
   <Route path="/about" element={<About />} />
 
   <Route path='/AllDestinations' element={<AllDestinations/>}/>
+  <Route path='/Packages' element={<Packages/>}/>
 <Route path='/Beach_Destinations' element={<Beach_Destinations/>}/>
 <Route path='/Mountain_Destinations' element={<Mountain_Destinations/>}/>
 <Route path='/Nature_Destinations' element={<Nature_Destinations/>}/>
 <Route path='/City_Destinations' element={<City_Destinations/>}/>
 
 <Route path='/destination/:slug' element={<Destination />}/>
+<Route path='/packages/:slug' element={<PackageDetails />}/>
+<Route path="/cart" element={<CartPage />} />
 
 </Routes>
         
         
       </div>
     </Router>
+    </CartProvider>
   );
 }
 

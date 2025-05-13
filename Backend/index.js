@@ -10,6 +10,7 @@ import GeminiAPI from "./routes/travelGemini.js";
 import destinationpath from "./routes/destinationAPI.js"
 import adminpath from "./routes/AdminAPI.js";
 import contactus from "./routes/contactAPI.js";
+import packageRoutes from './routes/package.js';
 const PORT=4444 || process.env.PORT;
 
 app.use(cors());
@@ -22,6 +23,7 @@ app.use("/TravelBuddy/user", userpath);
 app.use("/TravelBuddy/admin", adminpath);
 app.use("/TravelBuddy/contactus", contactus);
 app.use("/TravelBuddy/destinations", destinationpath);
+app.use('/TravelBuddy/packages', packageRoutes);
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
     mongoose.connect('mongodb://127.0.0.1:27017/travelDB').then(() => console.log('Connected to Database!'));

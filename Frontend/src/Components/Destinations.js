@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { Link } from 'react-router-dom';
 import parisimg from './images/destination-Img/paris.jpg';
 import baliimg from './images/destination-Img/bali.jpg';
 import nyimg from './images/destination-Img/newyork.jpg';
@@ -41,10 +41,19 @@ function Destinations() {
                             </Card>
                         </div>
                     ))}
+                    <div className="text-center pt-3">
+                    <Link to="/more-destinations">
+                        <Button variant="outline-primary">View More Destinations</Button>
+                    </Link>
                 </div>
+                </div>
+                
             </div>
         </div>
     );
 }
 
 export default Destinations;
+
+
+

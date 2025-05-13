@@ -1,0 +1,854 @@
+const packages = [
+ 
+ {
+  "title": "Goa Beach Leisure Package",
+  "description": "Soak up the sun and vibes with this relaxing beach holiday in North Goa.",
+  "destination": null,
+  "duration": "5 Days, 4 Nights",
+  "price": 9999,
+  "category": "Leisure",
+  "inclusions": [
+    "Beachside resort accommodation",
+    "Daily breakfast",
+    "Airport transfers",
+    "North Goa sightseeing",
+    "Evening cruise on Mandovi River"
+  ],
+  "exclusions": [
+    "Airfare",
+    "Water sports activities",
+    "Meals not mentioned"
+  ],
+  "itinerary": [
+    { "day": 1, "title": "Arrival in Goa", "activities": "Transfer to resort, sunset beach walk." },
+    { "day": 2, "title": "North Goa Exploration", "activities": "Visit Baga, Calangute, Fort Aguada, and Anjuna." },
+    { "day": 3, "title": "Relaxation Day", "activities": "Free time for spa or beach hopping." },
+    { "day": 4, "title": "Cruise Night", "activities": "Enjoy evening river cruise with music." },
+    { "day": 5, "title": "Checkout & Departure", "activities": "Relax and transfer to airport." }
+  ],
+  "travelMode": "By Air",
+  "accommodationDetails": "Lazy Lagoon Sarovar Portico or similar",
+  "mealPlan": "Breakfast only",
+  "bookingDeadline": "2025-10-01T00:00:00.000Z",
+  "availableDates": [
+    "2025-10-10T00:00:00.000Z",
+    "2025-11-01T00:00:00.000Z"
+  ],
+  "slug": "goa-beach-leisure",
+  "image": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130164/goa2_maukxc.jpg",
+  "images": {
+    "sightseeing": [
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130163/goa1_wqqoxm.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130164/goa2_maukxc.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130165/goa3_pkzai4.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130165/goa3_pkzai4.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1746130169/goa5_nk4iie.jpg"
+    ],
+    "hotel": [
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040834/resort2_dpgctr.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040834/resort1_a9thro.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040537/hotelroom-7772422_1920_ga1fev.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040833/restraunt1_ub0btz.jpg"
+    ],
+    "restaurant": [
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040834/restraunt2_awgnwq.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747040834/restraunt2_awgnwq.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747041146/food2_rkvh3p.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747041147/food1_hior43.jpg"
+    ]
+  }
+}
+
+  
+  
+
+  {
+  "title": "Spiritual Tour of Varanasi",
+  "description": "A soul-refreshing spiritual journey through one of the world’s oldest cities, Varanasi.",
+  "destination": null,
+  "duration": "3 Days, 2 Nights",
+  "price": 7999,
+  "category": "Spiritual",
+  "inclusions": [
+    "2-star hotel stay",
+    "Daily breakfast & dinner",
+    "Ganga Aarti ceremony visit",
+    "Sarnath visit",
+    "Temple tour with guide"
+  ],
+  "exclusions": [
+    "Air/train tickets",
+    "Camera fees",
+    "Tips & donations"
+  ],
+  "itinerary": [
+    { "day": 1, "title": "Arrival in Varanasi", "activities": "Check-in and attend Ganga Aarti at Dashashwamedh Ghat." },
+    { "day": 2, "title": "Spiritual & Cultural Day", "activities": "Boat ride, temple tour, and Sarnath excursion." },
+    { "day": 3, "title": "Checkout", "activities": "Early morning rituals, breakfast, and departure." }
+  ],
+  "travelMode": "By Train",
+  "accommodationDetails": "Hotel Ganges Grand or similar",
+  "mealPlan": "Breakfast and Dinner",
+  "bookingDeadline": "2025-08-01T00:00:00.000Z",
+  "availableDates": [
+    "2025-08-10T00:00:00.000Z",
+    "2025-09-01T00:00:00.000Z"
+  ],
+  "slug": "varanasi-spiritual-tour",
+  "image": "/images/packages/varanasi-spiritual.jpg",
+  "images": {
+    "sightseeing": [],
+    "hotel": [],
+    "restaurant": []
+  }
+}
+
+
+
+ {
+  "title": "Paris & Swiss Alps Discovery",
+  "description": "A dreamy European adventure combining the romance of Paris with the breathtaking landscapes of Switzerland.",
+  "destination": null,
+  "duration": "8 Days, 7 Nights",
+  "price": 179999,
+  "category": "Romantic",
+  "inclusions": [
+    "4-star hotel stays",
+    "Eiffel Tower entry",
+    "Train to Lucerne and Interlaken",
+    "Cable car to Mt. Titlis",
+    "Daily continental breakfast",
+    "Visa assistance"
+  ],
+  "exclusions": [
+    "International flights",
+    "Travel insurance",
+    "Personal expenses"
+  ],
+  "itinerary": [
+    { "day": 1, "title": "Arrival in Paris", "activities": "Check-in, Seine River cruise in evening." },
+    { "day": 2, "title": "City Tour", "activities": "Eiffel Tower, Champs-Élysées, Louvre (external)." },
+    { "day": 3, "title": "Train to Lucerne", "activities": "Travel to Switzerland and relax by the lake." },
+    { "day": 4, "title": "Mt. Titlis Excursion", "activities": "Visit Mt. Titlis via cable car, snow activities." },
+    { "day": 5, "title": "Travel to Interlaken", "activities": "Train ride with scenic views." },
+    { "day": 6, "title": "Free Day in Interlaken", "activities": "Optional paragliding or chocolate workshop." },
+    { "day": 7, "title": "Return to Paris", "activities": "Final shopping and leisure time." },
+    { "day": 8, "title": "Departure", "activities": "Transfer to airport." }
+  ],
+  "travelMode": "By Air & Rail",
+  "accommodationDetails": "Hotel Ibis Paris, Hotel Monopol Lucerne",
+  "mealPlan": "Breakfast only",
+  "bookingDeadline": "2025-08-31T00:00:00.000Z",
+  "availableDates": [
+    "2025-09-10T00:00:00.000Z",
+    "2025-10-05T00:00:00.000Z"
+  ],
+  "slug": "paris-swiss-alps",
+  "image": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746091234/paris_gvbz4j.jpg",
+  "images": {
+    "sightseeing": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-1_nvg8m3.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-4_ogtivh.jpg",
+        "https://res.cloudinary.com/dzyb93kms/image/upload/v1746121585/paris-2_j1xhv6.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046458/swiss5_hyyslr.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046456/swiss2_atoiiv.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046455/swiss3_ewnqvc.jpg"
+    ],
+    "hotel": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747046448/swisshotel2_iscctq.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046449/swissh3_y8oxsg.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046458/parishotes1_pgyi9k.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046458/parishotes1_pgyi9k.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046461/parishotel3_jxgqjg.jpg"
+    ],
+    "restaurant": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747046470/parisfood3_oe3cky.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046466/parisfood2_aoyh21.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046465/parisfood1_v6ofjo.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046452/swissfood2_fblood.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747046451/swissfood1_ja77pr.jpg"
+    ]
+  }
+}
+
+  
+
+
+
+
+ {
+  "title": "Maldives Honeymoon Escape",
+  "description": "A tropical paradise for couples, offering luxurious resorts and serene beaches.",
+  "destination": "6813da9ae51165c039c8049c",
+  "duration": "6 Days, 5 Nights",
+  "price": 25000,
+  "category": "Romantic",
+  "inclusions": [
+    "Luxury resort accommodation",
+    "Daily breakfast and dinner",
+    "Private beach access",
+    "Spa treatment for couples",
+    "Sunset dolphin cruise"
+  ],
+  "exclusions": [
+    "International flights",
+    "Water sports activities",
+    "Personal expenses"
+  ],
+  "itinerary": [
+    { "day": 1, "title": "Arrival in Maldives", "activities": "Check-in to resort, relax on the beach." },
+    { "day": 2, "title": "Island Exploration", "activities": "Visit nearby islands and enjoy the scenery." },
+    { "day": 3, "title": "Spa Day", "activities": "Couples spa treatment and beach relaxation." },
+    { "day": 4, "title": "Dolphin Cruise", "activities": "Sunset cruise with dolphin watching." },
+    { "day": 5, "title": "Relaxation Day", "activities": "Free time for water activities or relaxation." },
+    { "day": 6, "title": "Departure", "activities": "Checkout and transfer to airport." }
+  ],
+  "travelMode": "By Air",
+  "accommodationDetails": "Anantara Veli Maldives Resort or similar",
+  "mealPlan": "Breakfast and Dinner",
+  "bookingDeadline": "2025-09-15T00:00:00.000Z",
+  "availableDates": [
+    "2025-11-01T00:00:00.000Z",
+    "2025-12-01T00:00:00.000Z"
+  ],
+  "slug": "maldives-honeymoon",
+  "image": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128393/Maldives4_o1zzby.webp",
+  "images": {
+    "sightseeing": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1746128390/maldives_xjlnbo.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128392/Maldives3_aiqdwy.webp",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128392/Maldives2_qbncrb.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128388/Maldives1_azelyq.jpg",
+           "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128395/Maldives5_chnnxo.webp"
+           ],
+
+    "hotel": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747047794/maldivesh2_v1e09u.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047803/maldives_h1_b3ul19.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047827/maldivesh5_kvtvg0.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047791/maldivesh3_hf6vp8.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047790/maldivesh4_yhvqzn.jpg"
+    ],
+
+    "restaurant": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747047790/maldivesfood4_nwibzl.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047791/maldivesfood1_ofwulg.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047792/maldivesfood2_ag8cbd.jpg",
+    "https://res.cloudinary.com/dzyb93kms/image/upload/v1747047790/maldivesfood3_al0hra.jpg"
+    ]
+  }
+}
+
+  
+
+
+
+ {
+  "title": "Explore the Wonders of Egypt",
+  "description": "A journey through the ancient wonders of Egypt, from the Pyramids to the Nile.",
+  "destination": null,
+  "duration": "7 Days, 6 Nights",
+  "price": 15000,
+  "category": "Adventure",
+  "inclusions": [
+    "5-star hotel accommodation",
+    "Guided tours of the Pyramids and Sphinx",
+    "Nile River cruise",
+    "Visit Luxor and Karnak Temple",
+    "All meals included"
+  ],
+  "exclusions": [
+    "Flights to Egypt",
+    "Visa fees",
+    "Personal expenses"
+  ],
+  "itinerary": [
+    { "day": 1, "title": "Arrival in Cairo", "activities": "Transfer to hotel, relax and prepare for the tour." },
+    { "day": 2, "title": "Pyramids Tour", "activities": "Visit the Great Pyramid of Giza and the Sphinx." },
+    { "day": 3, "title": "Cairo City Tour", "activities": "Explore the Egyptian Museum and Cairo's old market." },
+    { "day": 4, "title": "Nile River Cruise", "activities": "Board a Nile cruise and relax on the river." },
+    { "day": 5, "title": "Luxor & Karnak", "activities": "Visit Luxor and Karnak Temple, Valley of the Kings." },
+    { "day": 6, "title": "Free Day in Cairo", "activities": "Optional visit to the Egyptian Museum or shopping." },
+    { "day": 7, "title": "Departure", "activities": "Transfer to the airport for departure." }
+  ],
+  "travelMode": "By Air & River Cruise",
+  "accommodationDetails": "Cairo Marriot Hotel, Nile Cruise Ship",
+  "mealPlan": "All Meals Included",
+  "bookingDeadline": "2025-10-05T00:00:00.000Z",
+  "availableDates": [
+    "2025-12-10T00:00:00.000Z",
+    "2026-01-15T00:00:00.000Z"
+  ],
+  "slug": "egypt-wonders",
+  "image": "/images/packages/egypt-wonders.jpg",
+  "images": {
+    "sightseeing": [],
+    "hotel": [],
+    "restaurant": []
+  }
+}
+
+  
+  
+  
+
+{
+    "title": "Japan Culture & Nature Tour",
+    "description": "Discover the harmony of tradition and modernity in Japan—from ancient Kyoto to futuristic Tokyo and natural hot springs.",
+    "destination": null,
+    "duration": "9 Days, 8 Nights",
+    "price": 209999,
+    "category": "Cultural",
+    "inclusions": [
+      "4-star accommodation",
+      "Shinkansen bullet train experience",
+      "Mount Fuji excursion",
+      "Guided tour in Kyoto and Tokyo",
+      "Daily breakfast",
+      "Airport transfers"
+    ],
+    "exclusions": [
+      "International airfare",
+      "Lunch & dinner",
+      "Entry to optional attractions"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Tokyo",
+        "activities": "Hotel check-in and welcome dinner."
+      },
+      {
+        "day": 2,
+        "title": "Tokyo Sightseeing",
+        "activities": "Visit Asakusa Temple, Shibuya Crossing, and Tokyo Tower."
+      },
+      {
+        "day": 3,
+        "title": "Mount Fuji Day Trip",
+        "activities": "Explore Fuji Five Lakes and take photos at Chureito Pagoda."
+      },
+      {
+        "day": 4,
+        "title": "Travel to Kyoto",
+        "activities": "Experience the Shinkansen and enjoy Gion district in the evening."
+      },
+      {
+        "day": 5,
+        "title": "Kyoto Highlights",
+        "activities": "Golden Pavilion, Arashiyama Bamboo Grove, and Fushimi Inari Shrine."
+      },
+      {
+        "day": 6,
+        "title": "Nara Excursion",
+        "activities": "Visit Todai-ji Temple and Nara Deer Park."
+      },
+      {
+        "day": 7,
+        "title": "Hakone Onsen Stay",
+        "activities": "Travel to Hakone for a traditional ryokan experience."
+      },
+      {
+        "day": 8,
+        "title": "Back to Tokyo",
+        "activities": "Free time for shopping and leisure."
+      },
+      {
+        "day": 9,
+        "title": "Departure",
+        "activities": "Transfer to airport for flight back."
+      }
+    ],
+    "travelMode": "By Air & Rail",
+    "accommodationDetails": "Hotel Gracery Shinjuku, Kyoto Century Hotel, Hakone Ryokan",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-09-10T00:00:00+00:00",
+    "availableDates": [
+      "2025-10-15T00:00:00+00:00",
+      "2025-11-05T00:00:00+00:00"
+    ],
+    "slug": "japan-culture-nature-tour",
+    "image": "/images/packages/japan-culture.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+  ,
+
+
+
+  
+  {
+    "title": "Dubai Luxury Experience",
+    "description": "A lavish 5-star adventure in Dubai, offering iconic attractions and exclusive experiences.",
+    "destination": null,
+    "duration": "5 Days, 4 Nights",
+    "price": 22000,
+    "category": "Luxury",
+    "inclusions": [
+      "5-star hotel accommodation",
+      "Daily breakfast",
+      "Desert safari with BBQ dinner",
+      "Burj Khalifa entry",
+      "Private yacht cruise"
+    ],
+    "exclusions": [
+      "International flights",
+      "Alcoholic beverages",
+      "Personal shopping expenses"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Dubai", "activities": "Check-in and explore Dubai Mall." },
+      { "day": 2, "title": "City Tour & Burj Khalifa", "activities": "Visit Burj Khalifa and Dubai Fountain." },
+      { "day": 3, "title": "Desert Safari", "activities": "Go for a thrilling desert safari with a BBQ dinner." },
+      { "day": 4, "title": "Yacht Cruise", "activities": "Enjoy a private yacht cruise around Palm Jumeirah." },
+      { "day": 5, "title": "Shopping & Departure", "activities": "Visit local markets and transfer to airport." }
+    ],
+    "travelMode": "By Air",
+    "accommodationDetails": "Atlantis The Palm or similar",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-09-30T00:00:00.000Z",
+    "availableDates": [
+      "2025-11-15T00:00:00.000Z",
+      "2025-12-01T00:00:00.000Z"
+    ],
+    "slug": "dubai-luxury-experience",
+    "image": "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050924/dubai_jjpu1j.png",
+    "images": {
+      "sightseeing": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747050922/dubai2_cxssvb.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050919/dubai1_dewhlj.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050926/dubai4_ji5n6m.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050922/dubai3_uklbfm.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747051136/dubai5_kklgzv.jpg"
+      ],
+
+      "hotel": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747050908/dubaih2_pxnmny.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050907/dubaihotel1_f0bclt.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050908/dubaih3_dpmwco.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050912/dubaih5_csoom1.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050911/dubaih4_uc27ze.jpg"
+      ],
+
+      "restaurant": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747050916/dubaifood2_sb7gdl.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050915/dubaifood1_isnhfz.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747050917/dubaifood4_haykxv.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747051388/dubaifood5_ffv857.jpg"
+      ]
+    }
+  }
+
+
+
+
+
+
+
+
+  {
+    "title": "New Zealand Adventure",
+    "description": "An action-packed adventure across New Zealand, including stunning landscapes and outdoor activities.",
+    "destination": null,
+    "duration": "10 Days, 9 Nights",
+    "price": 30000,
+    "category": "Adventure",
+    "inclusions": [
+      "Luxury accommodation",
+      "Daily breakfast",
+      "Visit to Hobbiton and Rotorua",
+      "Bungee jumping in Queenstown",
+      "Scenic helicopter ride over Milford Sound"
+    ],
+    "exclusions": [
+      "International flights",
+      "Meals not mentioned",
+      "Insurance"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Auckland", "activities": "Transfer to hotel and rest." },
+      { "day": 2, "title": "Auckland City Tour", "activities": "Explore Auckland’s waterfront and Sky Tower." },
+      { "day": 3, "title": "Hobbiton Tour", "activities": "Visit the famous Hobbiton movie set." },
+      { "day": 4, "title": "Rotorua", "activities": "Explore geothermal parks and Maori culture." },
+      { "day": 5, "title": "Queenstown", "activities": "Travel to Queenstown, known for outdoor adventure." },
+      { "day": 6, "title": "Bungee Jumping", "activities": "Experience a thrilling bungee jump off Kawarau Bridge." },
+      { "day": 7, "title": "Milford Sound", "activities": "Take a scenic helicopter ride over Milford Sound." },
+      { "day": 8, "title": "Mt. Cook", "activities": "Explore the alpine scenery and hike in Mt. Cook National Park." },
+      { "day": 9, "title": "Wellington", "activities": "Visit Te Papa Museum and local markets." },
+      { "day": 10, "title": "Departure", "activities": "Final day of sightseeing and transfer to airport." }
+    ],
+    "travelMode": "By Air & Road",
+    "accommodationDetails": "Luxury Lodges & Hotels",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-12-15T00:00:00.000Z",
+    "availableDates": [
+      "2026-01-05T00:00:00.000Z",
+      "2026-02-10T00:00:00.000Z"
+    ],
+    "slug": "new-zealand-adventure",
+    "image": "/images/packages/new-zealand.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+  {
+    "title": "Bali Spiritual Retreat",
+    "description": "A rejuvenating spiritual retreat in Bali, focusing on wellness, yoga, and meditation.",
+    "destination": null,
+    "duration": "7 Days, 6 Nights",
+    "price": 17000,
+    "category": "Wellness",
+    "inclusions": [
+      "Luxury resort accommodation",
+      "Daily yoga and meditation sessions",
+      "Traditional Balinese massage",
+      "Excursion to Ubud and rice terraces",
+      "Cultural workshops"
+    ],
+    "exclusions": [
+      "International flights",
+      "Meals not mentioned",
+      "Personal expenses"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Bali", "activities": "Transfer to resort, relax and unwind." },
+      { "day": 2, "title": "Yoga & Meditation", "activities": "Morning yoga session followed by a guided meditation." },
+      { "day": 3, "title": "Ubud Excursion", "activities": "Visit Ubud Monkey Forest and rice terraces." },
+      { "day": 4, "title": "Traditional Balinese Massage", "activities": "Indulge in a traditional Balinese spa treatment." },
+      { "day": 5, "title": "Cultural Workshops", "activities": "Learn Balinese arts and crafts." },
+      { "day": 6, "title": "Free Day", "activities": "Enjoy free time for spa or beach relaxation." },
+      { "day": 7, "title": "Departure", "activities": "Checkout and transfer to the airport." }
+    ],
+    "travelMode": "By Air",
+    "accommodationDetails": "Fivelements Retreat or similar",
+    "mealPlan": "All meals included",
+    "bookingDeadline": "2025-10-20T00:00:00.000Z",
+    "availableDates": [
+      "2025-12-01T00:00:00.000Z",
+      "2026-01-15T00:00:00.000Z"
+    ],
+    "slug": "bali-spiritual-retreat",
+    "image": "/images/packages/bali-retreat.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+  {
+    "title": "Kyoto Cultural Immersion",
+    "description": "Experience the heart of traditional Japan in Kyoto with temples, gardens, and tea ceremonies.",
+    "destination": null,
+    "duration": "6 Days, 5 Nights",
+    "price": 25000,
+    "category": "Culture",
+    "inclusions": [
+      "4-star traditional Ryokan accommodation",
+      "Daily Japanese breakfast",
+      "Guided tours of temples and shrines",
+      "Tea ceremony experience",
+      "Kimono wearing experience"
+    ],
+    "exclusions": [
+      "International flights",
+      "Meals not mentioned",
+      "Entrance fees to some sites"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Kyoto", "activities": "Check-in to Ryokan and explore Gion district." },
+      { "day": 2, "title": "Temples & Shrines", "activities": "Visit Fushimi Inari Shrine and Kiyomizu-dera Temple." },
+      { "day": 3, "title": "Arashiyama & Bamboo Grove", "activities": "Explore Arashiyama and the serene Bamboo Grove." },
+      { "day": 4, "title": "Tea Ceremony & Kimono", "activities": "Participate in a traditional tea ceremony and wear a kimono." },
+      { "day": 5, "title": "Golden Pavilion & Gardens", "activities": "Visit Kinkaku-ji (Golden Pavilion) and Ryoan-ji rock garden." },
+      { "day": 6, "title": "Departure", "activities": "Enjoy a final Japanese breakfast before transfer to the airport." }
+    ],
+    "travelMode": "By Air & Rail",
+    "accommodationDetails": "Traditional Ryokan",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-11-30T00:00:00.000Z",
+    "availableDates": [
+      "2026-03-10T00:00:00.000Z",
+      "2026-04-15T00:00:00.000Z"
+    ],
+    "slug": "kyoto-cultural-immersion",
+    "image": "/images/packages/kyoto-culture.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+  
+  {
+    "title": "Tuscany Food & Wine Tour",
+    "description": "Indulge in the culinary delights and scenic beauty of Tuscany, Italy.",
+    "destination": null,
+    "duration": "7 Days, 6 Nights",
+    "price": 28000,
+    "category": "Gastronomy",
+    "inclusions": [
+      "Agriturismo accommodation",
+      "Daily breakfast",
+      "Wine tasting sessions",
+      "Cooking class",
+      "Guided tours of Florence and Siena"
+    ],
+    "exclusions": [
+      "International flights",
+      "Lunches and dinners",
+      "Personal expenses"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Florence", "activities": "Check-in to Agriturismo near Florence." },
+      { "day": 2, "title": "Florence City Tour", "activities": "Explore iconic sites like the Duomo and Uffizi Gallery." },
+      { "day": 3, "title": "Tuscan Cooking Class", "activities": "Learn to prepare regional dishes in a hands-on cooking class." },
+      { "day": 4, "title": "Siena & San Gimignano", "activities": "Visit the medieval towns of Siena and San Gimignano." },
+      { "day": 5, "title": "Chianti Wine Region", "activities": "Tour vineyards and enjoy wine tasting in the Chianti region." },
+      { "day": 6, "title": "Relaxation in Tuscany", "activities": "Enjoy the countryside or optional activities like truffle hunting." },
+      { "day": 7, "title": "Departure", "activities": "Transfer to the airport from Florence." }
+    ],
+    "travelMode": "By Air & Road",
+    "accommodationDetails": "Agriturismo",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-10-15T00:00:00.000Z",
+    "availableDates": [
+      "2026-05-01T00:00:00.000Z",
+      "2026-06-10T00:00:00.000Z"
+    ],
+    "slug": "tuscany-food-wine-tour",
+    "image": "/images/packages/tuscany-food.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+  {
+    "title": "Andaman Island Escape",
+    "description": "A tropical getaway to the beautiful Andaman Islands with pristine beaches and water sports.",
+    "destination": null,
+    "duration": "6 Days, 5 Nights",
+    "price": 18000,
+    "category": "Beach",
+    "inclusions": [
+      "Comfortable hotel accommodation",
+      "Daily breakfast",
+      "Ferry transfers between islands",
+      "Snorkeling and water activities",
+      "Sightseeing tours of Port Blair and Havelock"
+    ],
+    "exclusions": [
+      "International/Domestic flights to Port Blair",
+      "Lunches and dinners",
+      "Scuba diving (optional)"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Port Blair", "activities": "Check-in to hotel and explore Cellular Jail." },
+      { "day": 2, "title": "Havelock Island", "activities": "Ferry to Havelock and visit Radhanagar Beach." },
+      { "day": 3, "title": "Snorkeling at Elephant Beach", "activities": "Enjoy snorkeling and water sports at Elephant Beach." },
+      { "day": 4, "title": "Neil Island", "activities": "Ferry to Neil Island and visit Bharatpur and Laxmanpur Beaches." },
+      { "day": 5, "title": "Return to Port Blair", "activities": "Ferry back to Port Blair and visit Corbyn's Cove Beach." },
+      { "day": 6, "title": "Departure", "activities": "Transfer to Port Blair airport for departure." }
+    ],
+    "travelMode": "By Air & Ferry",
+    "accommodationDetails": "Standard Hotels",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-12-31T00:00:00.000Z",
+    "availableDates": [
+      "2026-02-15T00:00:00.000Z",
+      "2026-03-20T00:00:00.000Z"
+    ],
+    "slug": "andaman-island-escape",
+    "image": "/images/packages/andaman-beach.jpg",
+    "images": {
+      "sightseeing": [],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+  {
+    "title": "Jaipur Royal Heritage Tour",
+    "description": "Experience the grandeur of the Pink City with its majestic forts and vibrant culture.",
+    "destination": "Jaipur, India",
+    "duration": "4 Days, 3 Nights",
+    "price": 15000,
+    "category": "Culture",
+    "inclusions": [
+      "4-star hotel accommodation",
+      "Daily breakfast",
+      "Guided tours of forts and palaces",
+      "Elephant ride at Amber Fort",
+      "Shopping tour of local bazaars"
+    ],
+    "exclusions": [
+      "International/Domestic flights",
+      "Lunch and dinner",
+      "Entrance fees to monuments"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Jaipur", "activities": "Check-in to hotel and relax." },
+      { "day": 2, "title": "Jaipur Sightseeing", "activities": "Visit Amber Fort, Hawa Mahal, City Palace." },
+      { "day": 3, "title": "More Jaipur", "activities": "Explore Jantar Mantar, Jal Mahal, local markets." },
+      { "day": 4, "title": "Departure", "activities": "Hotel check-out and transfer to airport/railway station." }
+    ],
+    "travelMode": "By Air & Road",
+    "accommodationDetails": "Hotel Rajputana Palace or similar",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-11-15T00:00:00.000Z",
+    "availableDates": [
+      "2026-01-10T00:00:00.000Z",
+      "2026-02-20T00:00:00.000Z"
+    ],
+    "slug": "jaipur-royal-heritage",
+    "image": "/images/packages/jaipur-heritage.jpg",
+    "images": {
+      "sightseeing": ["https://unsplash.com/photos/a-facade-of-the-hawa-mahal-palace-of-winds-in-jaipur-india-PXpef4-4x7E", "https://unsplash.com/photos/an-aerial-view-of-the-amber-fort-in-jaipur-india-9Bq31G5J9YQ", "https://unsplash.com/photos/the-jal-mahal-water-palace-at-sunset-in-jaipur-india-DyKj-qK_60c"],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+
+  {
+    "title": "Kerala Backwater & Hill Station",
+    "description": "Discover the serene backwaters and misty hills of God's Own Country.",
+    "destination": "Kerala, India",
+    "duration": "6 Days, 5 Nights",
+    "price": 18000,
+    "category": "Nature",
+    "inclusions": [
+      "Comfortable hotel/resort & houseboat stay",
+      "Daily breakfast",
+      "Houseboat cruise in Alleppey",
+      "Visit to tea plantations in Munnar",
+      "Spice plantation tour in Thekkady"
+    ],
+    "exclusions": [
+      "International/Domestic flights",
+      "Lunch and dinner",
+      "Ayurvedic treatments (optional)"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in Cochin", "activities": "Check-in to hotel and explore Fort Kochi." },
+      { "day": 2, "title": "Munnar", "activities": "Drive to Munnar and visit tea estates." },
+      { "day": 3, "title": "Thekkady", "activities": "Visit Periyar Wildlife Sanctuary & spice plantations." },
+      { "day": 4, "title": "Alleppey", "activities": "Enjoy a houseboat cruise in the backwaters." },
+      { "day": 5, "title": "Varkala", "activities": "Relax at Varkala beach." },
+      { "day": 6, "title": "Departure", "activities": "Transfer to Trivandrum/Cochin airport." }
+    ],
+    "travelMode": "By Air & Road",
+    "accommodationDetails": "Various hotels, resorts & houseboat",
+    "mealPlan": "Breakfast only",
+    "bookingDeadline": "2025-12-01T00:00:00.000Z",
+    "availableDates": [
+      "2026-02-05T00:00:00.000Z",
+      "2026-03-15T00:00:00.000Z"
+    ],
+    "slug": "kerala-backwater-hills",
+    "image": "/images/packages/kerala-nature.jpg",
+    "images": {
+      "sightseeing": ["https://unsplash.com/photos/a-houseboat-on-the-backwaters-of-kerala-india-mdR_i76W9-Q", "https://unsplash.com/photos/lush-green-tea-plantations-cover-rolling-hills-in-munnar-india-9v8m_GvOslw", "https://unsplash.com/photos/a-view-of-the-periyar-lake-in-thekkady-india-with-boats-and-wildlife-in-the-distance-EaJgJ69fBic"],
+      "hotel": [],
+      "restaurant": []
+    }
+  }
+
+
+
+
+
+
+  {
+    "title": "New York City Cultural Experience",
+    "description": "Immerse yourself in the iconic landmarks and vibrant culture of New York City.",
+    "destination": "New York, USA",
+    "duration": "5 Days, 4 Nights",
+    "price": 20000,
+    "category": "Culture",
+    "inclusions": [
+      "4-star hotel accommodation in Manhattan",
+      "Guided tours of major attractions",
+      "Ferry to Statue of Liberty & Ellis Island",
+      "Entry to one museum (MoMA or Met)",
+      "Broadway show ticket"
+    ],
+    "exclusions": [
+      "International flights",
+      "Meals not mentioned",
+      "Transportation within the city"
+    ],
+    "itinerary": [
+      { "day": 1, "title": "Arrival in NYC", "activities": "Check-in to hotel and explore Times Square." },
+      { "day": 2, "title": "Downtown Manhattan", "activities": "Visit Statue of Liberty, 9/11 Memorial, Wall Street." },
+      { "day": 3, "title": "Midtown Manhattan", "activities": "Explore Empire State Building, Rockefeller Center, St. Patrick's Cathedral." },
+      { "day": 4, "title": "Culture & Arts", "activities": "Visit a museum and enjoy a Broadway show." },
+      { "day": 5, "title": "Central Park & Departure", "activities": "Explore Central Park and transfer to the airport." }
+    ],
+    "travelMode": "By Air",
+    "accommodationDetails": "The Manhattan at Times Square or similar",
+    "mealPlan": "No meals included",
+    "bookingDeadline": "2026-01-15T00:00:00.000Z",
+    "availableDates": [
+      "2026-03-01T00:00:00.000Z",
+      "2026-04-10T00:00:00.000Z"
+    ],
+    "slug": "new-york-city-culture",
+    "image": "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128405/newyork_jt1yt5.jpg",
+    "images": {
+      "sightseeing": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1746128504/nyc1_okddnb.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128406/nyc_iqbxyh.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128399/nyc2_k4k3re.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746128993/nyc3_vpkkl1.jpg",
+       "https://res.cloudinary.com/dzyb93kms/image/upload/v1746129449/nyc5_wewp2m.jpg"
+       ],
+      "hotel": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747044634/ny1_y1di2b.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044634/nyhotel2_dvxa2j.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044634/nyhotel4_jek86q.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044634/nyhotel3_ocgwlm.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044636/nyfood3_irui8s.jpg"
+      ],
+      
+      "restaurant": ["https://res.cloudinary.com/dzyb93kms/image/upload/v1747044636/nyfood2_i4x6mw.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044633/nyfood1_mhalgj.jpg",
+      "https://res.cloudinary.com/dzyb93kms/image/upload/v1747044634/nyfood4_ywiovd.jpg"
+      ]
+    }
+  }
+
+
+
+]
