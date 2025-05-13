@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Components/Home';
 import Signup from './Components/users/Signup';
@@ -14,6 +14,7 @@ import NatureDestinations from './Components/Destination_pages/NatureDes' ;
 import Destination from './Components/Destination_pages/Destination'; 
 import { CartProvider } from './Context/CartContext';
 import CartPage from './pages/CartPage';
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import Packages from './Components/Destination_pages/Packages' ;
 import PackageDetails from './Components/Destination_pages/PackageDetails';

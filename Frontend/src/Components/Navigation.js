@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Routes, Route, Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import logo1 from './images/logo1.png';
 import { useCart } from '../Context/CartContext';
