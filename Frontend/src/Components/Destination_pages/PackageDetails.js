@@ -15,7 +15,7 @@ function PackageDetails() {
   useEffect(() => {
     const fetchPackage = async () => {
       try {
-        const res = await axios.get(`http://localhost:4444/TravelBuddy/packages/slug/${slug}`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/packages/slug/${slug}`);
         setPkg(res.data);
       } catch (err) {
         console.error('Error fetching package:', err);

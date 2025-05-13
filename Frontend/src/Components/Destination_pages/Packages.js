@@ -12,7 +12,7 @@ function Packages() {
     useEffect(() => {
         const fetchPackages = async () => {
             try {
-                const response = await axios.get('http://localhost:4444/TravelBuddy/packages');
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/packages`);
                 setPackages(response.data);
                 setLoading(false);
             } catch (err) {

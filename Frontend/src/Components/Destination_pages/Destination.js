@@ -15,7 +15,7 @@ function Destination() {
   useEffect(() => {
     const fetchDestination = async () => {
       try {
-        const res = await axios.get(`http://localhost:4444/TravelBuddy/destinations/slug/${slug}`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/destinations/slug/${slug}`);
         setDestination(res.data);
       } catch (error) {
         console.error('Error fetching destination:', error);

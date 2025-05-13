@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+// import dotenv from '../../.env'
 import { FaChevronRight, FaBusAlt, FaPlane, FaTrain } from 'react-icons/fa';
 
 function Packages() {
@@ -14,7 +15,7 @@ function Packages() {
     useEffect(() => {
         const fetchPackages = async () => {
             try {
-                const response = await axios.get('http://localhost:4444/TravelBuddy/packages');
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/packages`);
                 setPackages(response.data);
                 setLoading(false);
             } catch (err) {
