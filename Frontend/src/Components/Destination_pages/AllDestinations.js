@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
-
+import { FaStar } from 'react-icons/fa';
 import pin from '../images/destination-Img/pin.png';
 
 function AllDestinations() {
@@ -52,13 +52,13 @@ function AllDestinations() {
     />
     <Card.Body>
       <Card.Title className="fw-bold">{destination.name}</Card.Title>
-      <Card.Text className="text-secondary">{destination.description.split(' ').slice(0, 12).join(' ')}...</Card.Text>
+      <Card.Text className="text-secondary">{destination.description.split(' ').slice(0, 11).join(' ')}...</Card.Text>
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
           <img className="me-2" src={pin} alt="Location Pin" style={{ height: '20px' }} />
           <span className="text-secondary">{destination.location}</span>
         </div>
-        <span className="badge bg-light text-secondary fw-bold">{destination.category}</span>
+        <span className="badge bg-light text-secondary fw-bold"><FaStar className="me-1" />{destination.stars}</span>
       </div>
     </Card.Body>
   </Card>

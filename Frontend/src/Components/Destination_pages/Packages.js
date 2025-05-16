@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import pin from '../images/destination-Img/pin.png';
+import { FaBusAlt, FaPlane, FaTrain } from 'react-icons/fa';
 
 function Packages() {
     const [packages, setPackages] = useState([]);
@@ -28,6 +29,13 @@ function Packages() {
     if (loading) return <div className="p-5">Loading tour packages...</div>;
     if (error) return <div className="p-5 text-danger">{error}</div>;
 
+    const getTravelIcon = (mode) => {
+        const m = mode?.toLowerCase();
+        if (m?.includes('by air')) return <FaPlane className="me-1" />;
+        if (m?.includes('by train')) return <FaTrain className="me-1" />;
+        return <FaBusAlt className="me-1" />;
+      };
+
     return (
         <div className="p-5" style={{ background: 'rgb(245, 245, 245)' }}>
             <h1 className="fw-bold p-3" style={{ fontFamily: 'sans-serif' }}>Explore Popular Tour Packages</h1>
@@ -50,8 +58,9 @@ function Packages() {
                                         </Card.Text>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <div className="d-flex align-items-center">
-                                                <img className="me-2" src={pin} alt="Location Pin" style={{ height: '20px' }} />
-                                                <span className="text-secondary">{pkg.travelMode || 'By Air'}</span>
+                                                {/* <img className="me-2" src={pin} alt="Location Pin" style={{ height: '20px' }} /> */}
+                                                <span className="text-secondary"> {getTravelIcon(pkg.travelMode)}{pkg.travelMode || 'By Air'}</span>
+                                                {/* <strong className="me-2 fs-5">Travel Mode:</strong> {getTravelIcon(pkg.travelMode)} {pkg.travelMode} */}
                                             </div>
                                             <div className="text-end">
                                                 <span className="text-muted text-decoration-line-through me-2 fs-6">

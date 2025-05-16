@@ -42,7 +42,7 @@ function Destinations() {
                         </div>
                     ))}
                     <div className="text-center pt-3">
-                    <Link to="/more-destinations">
+                    <Link to="/AllDestinations">
                         <Button variant="outline-primary">View More Destinations</Button>
                     </Link>
                 </div>
