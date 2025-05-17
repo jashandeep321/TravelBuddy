@@ -1,11 +1,9 @@
 import React from 'react';
-// import nature from '../media/nature.mp4';
 import './Hero.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 function HeroSec() {
   return (
     <div className="hero-section d-flex align-items-center justify-content-center text-center">
