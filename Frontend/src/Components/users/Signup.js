@@ -1,16 +1,35 @@
+// .
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Form.css'; // Assuming this file contains your styling
+import { useLocation, useNavigate } from 'react-router-dom';
+import './Form.css';
 
 const Signup = () => {
   const [currentPage, setCurrentPage] = useState(1); // 1 for Signup, 2 for Login
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [signupData, setSignupData] = useState({ username: '', email: '', password: '' });
-  const [loading, setLoading] = useState(false); // Loader state
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Navigate between Signup and Login pages
-  const handleNext = () => setCurrentPage(2);
-  const handleBack = () => setCurrentPage(1);
+  const handleNext = () => {
+    setCurrentPage(2);
+    setError(null);
+  };
+  
+  const handleBack = () => {
+    setCurrentPage(1);
+    setError(null);
+  };
 
   // Handle input changes for both forms
   const handleInputChange = (e, formType) => {
@@ -26,16 +45,21 @@ const Signup = () => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
+    
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/register`, signupData);
       if (response.status === 200) {
-        alert('Signup successful!');
-        setSignupData({ username: '', email: '', password: '' });
-        setCurrentPage(2); // Redirect to login page after signup
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        
+        // Redirect to cart if coming from checkout, otherwise to home
+        const returnPath = location.state?.from === '/cart' ? '/cart' : '/';
+        navigate(returnPath, { state: { from: 'signup' } });
       }
     } catch (error) {
       console.error('Signup failed:', error.response?.data || error.message);
-      alert('Signup failed! Please try again.');
+      setError(error.response?.data?.message || 'Signup failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -45,15 +69,21 @@ const Signup = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
+    
     try {
-      const response = await axios.post('http://localhost:4444/TravelBuddy/user/login', loginData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/login`, loginData);
       if (response.status === 200) {
-        alert('Login successful!');
-        setLoginData({ email: '', password: '' });
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        
+        // Redirect to cart if coming from checkout, otherwise to home
+        const returnPath = location.state?.from === '/cart' ? '/cart' : '/';
+        navigate(returnPath, { state: { from: 'login' } });
       }
     } catch (error) {
       console.error('Login failed:', error.response?.data || error.message);
-      alert('Login failed! Please try again.');
+      setError(error.response?.data?.message || 'Login failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -67,20 +97,49 @@ const Signup = () => {
     };
   }, []);
 
+  // Get appropriate welcome message based on where user came from
+  const getWelcomeMessage = () => {
+    if (location.state?.from === '/cart') {
+      return {
+        heading: currentPage === 1 
+          ? 'Complete Your Booking' 
+          : 'Sign In to Checkout',
+        subheading: currentPage === 1
+          ? 'Create an account to proceed with your travel package'
+          : 'Log in to complete your purchase'
+      };
+    }
+    
+    return {
+      heading: currentPage === 1
+        ? 'Welcome to Travel Buddy!'
+        : 'Welcome Back!',
+      subheading: currentPage === 1
+        ? 'Adventure awaits! Sign up now to start planning your next trip'
+        : 'The adventure continues. Log in to pick up where you left off'
+    };
+  };
+
+  const { heading, subheading } = getWelcomeMessage();
+
   return (
     <div className="book">
-      {loading && <div className="loader">Loading...</div>}
+      {loading && (
+        <div className="loader-overlay">
+          <div className="loader"></div>
+        </div>
+      )}
+      
       <div className="flip-book">
         {/* Signup Page */}
         <div className={`flip ${currentPage === 1 ? 'active' : 'inactive'}`} id="p1">
           <div className="back">
             <div className="welcome-message">
               <h1 className="head">
-                Welcome to <span className="span">Travel Buddy!</span>
+                <span className="span">{heading}</span>
               </h1>
               <h2 className="head">
-                Adventure Awaits! <span className="span">Sign up</span> now to start planning your
-                next trip!
+                {subheading}
               </h2>
             </div>
             <button className="next-btn" onClick={handleNext}>
@@ -88,7 +147,8 @@ const Signup = () => {
             </button>
           </div>
           <div className="front">
-            <h2 className="login-head">Sign Up</h2>
+            <h2 className="login-head">Create Account</h2>
+            {error && <div className="alert alert-danger">{error}</div>}
             <form onSubmit={handleSignupSubmit}>
               <input
                 className="input"
@@ -98,6 +158,7 @@ const Signup = () => {
                 value={signupData.username}
                 onChange={(e) => handleInputChange(e, 'signup')}
                 required
+                minLength="3"
               />
               <input
                 className="input"
@@ -112,13 +173,14 @@ const Signup = () => {
                 className="input"
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Password (min 6 characters)"
                 value={signupData.password}
                 onChange={(e) => handleInputChange(e, 'signup')}
                 required
+                minLength="6"
               />
               <button type="submit" className="submit-btn" disabled={loading}>
-                Sign Up
+                {loading ? 'Creating Account...' : 'Sign Up'}
               </button>
             </form>
           </div>
@@ -129,19 +191,19 @@ const Signup = () => {
           <div className="back">
             <div className="welcome-message">
               <h1 className="head">
-                Welcome Back to <span className="span">Travel Buddy!</span>
+                <span className="span">{heading}</span>
               </h1>
               <h2 className="head">
-                The adventure continues here. <span className="span">Log in</span> to pick up where
-                you left off!
+                {subheading}
               </h2>
             </div>
             <button className="back-btn" onClick={handleBack}>
-              Don’t have an account? Sign Up
+              Don't have an account? Sign Up
             </button>
           </div>
           <div className="front">
             <h2 className="login-head">Login</h2>
+            {error && <div className="alert alert-danger">{error}</div>}
             <form onSubmit={handleLoginSubmit}>
               <input
                 className="input"
@@ -162,7 +224,7 @@ const Signup = () => {
                 required
               />
               <button type="submit" className="submit-btn" disabled={loading}>
-                Login
+                {loading ? 'Logging In...' : 'Login'}
               </button>
             </form>
           </div>

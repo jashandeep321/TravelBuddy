@@ -33,6 +33,31 @@ router.post("/register", async (req, res) => {
 });
 
 // Login a user
+// router.post("/login", async (req, res) => {
+//     try {
+//         const { email, password } = req.body;
+
+//         // Find the user by email
+//         const user = await User.findOne({ email });
+//         if (!user) {
+//             return res.status(400).json({ message: "Invalid email or password." });
+//         }
+
+//         // Compare the password
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//             return res.status(400).json({ message: "Invalid email or password." });
+//         }
+//         const token = jwt.sign({ userId: user._id}, JWT_SECRET, { expiresIn: '1h' });
+//         console.log(token);
+       
+//         res.status(200).json({ message: "Login successful!" ,token});
+//     } catch (error) {
+//         console.error("Error logging in user:", error);
+//         res.status(500).json({ message: "Server error during login." });
+//     }
+// });
+
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -48,15 +73,23 @@ router.post("/login", async (req, res) => {
         if (!isMatch) {
             return res.status(400).json({ message: "Invalid email or password." });
         }
-        const token = jwt.sign({ userId: user._id}, JWT_SECRET, { expiresIn: '1h' });
-        console.log(token);
-       
-        res.status(200).json({ message: "Login successful!" ,token});
+
+        // Create a token
+        const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
+
+        // Prepare user data without password
+        const { _id, username } = user;
+        const userData = { _id, username, email };
+
+        // Send token + user
+        res.status(200).json({ message: "Login successful!", token, user: userData });
+
     } catch (error) {
         console.error("Error logging in user:", error);
         res.status(500).json({ message: "Server error during login." });
     }
 });
+
 
 router.get("/all", async (req, res) => {
     try {

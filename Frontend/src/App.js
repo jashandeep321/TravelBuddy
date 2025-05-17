@@ -14,12 +14,14 @@ import NatureDestinations from './Components/Destination_pages/NatureDes' ;
 import Destination from './Components/Destination_pages/Destination'; 
 import { CartProvider } from './Context/CartContext';
 import CartPage from './pages/CartPage';
-
+import OrderHistory from './pages/OrderHistory'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Packages from './Components/Destination_pages/Packages' ;
 import PackageDetails from './Components/Destination_pages/PackageDetails';
 
 function App() {
+ 
+
   return (
      <CartProvider>
     <Router>
@@ -43,6 +45,7 @@ function App() {
 <Route path='/destination/:slug' element={<Destination />}/>
 <Route path='/packages/:slug' element={<PackageDetails />}/>
 <Route path="/cart" element={<CartPage />} />
+<Route path="/orders" element={<OrderHistory />} />
 
 </Routes>
         
