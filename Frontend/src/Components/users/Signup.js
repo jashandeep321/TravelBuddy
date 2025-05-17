@@ -143,7 +143,7 @@ const Signup = () => {
               </h2>
             </div>
             <button className="next-btn" onClick={handleNext}>
-              Already have an account? Login
+             New to Travel Buddy? Register
             </button>
           </div>
           <div className="front">
@@ -198,7 +198,7 @@ const Signup = () => {
               </h2>
             </div>
             <button className="back-btn" onClick={handleBack}>
-              Don't have an account? Sign Up
+               Already registered? Login
             </button>
           </div>
           <div className="front">

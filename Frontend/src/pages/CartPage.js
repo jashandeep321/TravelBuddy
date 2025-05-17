@@ -332,7 +332,7 @@ function CartPage() {
 
   const handleCheckout = async () => {
     if (!user) {
-      navigate('/signup', {
+      navigate('/Signup', {
         state: {
           from: '/cart',
           message: 'Please sign in to complete your purchase'
