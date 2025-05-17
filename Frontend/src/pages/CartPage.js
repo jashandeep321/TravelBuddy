@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react';
 import { useCart } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -66,6 +64,10 @@ function CartPage() {
 
  
   const handleCheckout = async () => {
+
+    console.log('Razorpay Key:', process.env.REACT_APP_RAZORPAY_KEY_ID);
+  console.log('API URL:', process.env.REACT_APP_API_URL);
+  
     if (!user) {
       navigate('/Signup', {
         state: {

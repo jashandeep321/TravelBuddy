@@ -1,9 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import mongoose from 'mongoose';
 import cors from "cors";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
-dotenv.config();
+
 const app=express();
 import userpath from "./routes/userAPI.js";
 import GeminiAPI from "./routes/travelGemini.js";
