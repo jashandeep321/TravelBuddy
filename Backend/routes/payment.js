@@ -9,13 +9,13 @@ import Package from '../model/package.js';
 
 const router = express.Router();
 
-// Razorpay Instance
+// ✅ Razorpay Instance
 const razorpayInstance = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
-// 1. Create Razorpay Order
+// ✅ 1. Create Razorpay Order
 router.post('/create-order', async (req, res) => {
   try {
     const { amount } = req.body;
@@ -39,7 +39,7 @@ router.post('/create-order', async (req, res) => {
 });
 
 
-// 2. Verify Payment & Save Order
+// ✅ 2. Verify Payment & Save Order
 router.post('/verify', async (req, res) => {
   const {
     razorpay_order_id,
