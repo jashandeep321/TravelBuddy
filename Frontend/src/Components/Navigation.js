@@ -26,18 +26,33 @@ function Navigation() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check login status on component mount
   useEffect(() => {
+  const checkLoginStatus = () => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
-  }, []);
+  };
+
+  // Check immediately on mount
+  checkLoginStatus();
+
+  // Listen for login status changes
+  window.addEventListener('loginStatusChanged', checkLoginStatus);
+
+  // Cleanup
+  return () => {
+    window.removeEventListener('loginStatusChanged', checkLoginStatus);
+  };
+}, []);
+
 
   const handleLogout = () => {
-    localStorage.clear(); // or localStorage.removeItem('token')
-    setIsLoggedIn(false);
-    alert('Logged out successfully!');
-    navigate('/Signup');
-  };
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  setIsLoggedIn(false);
+  // Dispatch a logout event
+  window.dispatchEvent(new Event('loginStatusChanged'));
+  navigate('/Signup');
+};
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => {
@@ -67,12 +82,38 @@ function Navigation() {
   };
 
   return (
+
     <>
       <Navbar expand="lg" className="bg-body-tertiary p-0">
         <Container>
           <Link to="/"><Navbar.Brand>
             <img src={logo1} alt="Logo" style={{ height: '3em', verticalAlign: 'middle', margin: '0 5px' }} />
           </Navbar.Brand></Link>
+
+          {/* Cart Icon - Moved outside Navbar.Collapse */}
+          <Link 
+            className="nav-link position-relative me-3" 
+            to="/cart"
+            style={{ order: 1 }} // Ensures it stays on the right
+          >
+            <FaShoppingCart size={28} />
+            {itemCount > 0 && (
+              <span
+                className="position-absolute translate-middle bg-danger border border-light rounded-circle d-flex justify-content-center align-items-center"
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  bottom: '15px',
+                  right: '-20px',
+                  top:'1px',
+                  fontSize: '0.7rem',
+                  color: 'white',
+                }}
+              >
+                {itemCount}
+              </span>
+            )}
+          </Link>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -95,29 +136,12 @@ function Navigation() {
               )}
 
               <Button variant="light" className="ms-2" onClick={handleShow}>Itinerary</Button>
-
-              <Link className="nav-link position-relative" to="/cart">
-                <FaShoppingCart size={28} />
-                {itemCount > 0 && (
-                  <span
-                    className="position-absolute translate-middle bg-danger border border-light rounded-circle d-flex justify-content-center align-items-center"
-                    style={{
-                      width: '18px',
-                      height: '18px',
-                      bottom: '15px',
-                      right: '-10px',
-                      fontSize: '0.7rem',
-                      color: 'white',
-                    }}
-                  >
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+
 
       {/* Modal */}
       <Modal show={showModal} onHide={handleClose} centered dialogClassName="modal-xl">

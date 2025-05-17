@@ -1,229 +1,209 @@
 
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Form.css';
+import { Container, Row, Col, Card, Form, Button, Alert, Spinner } from 'react-bootstrap';
+import backgroundImage from '../images/destination-Img/travel1.webp'; // Replace with your image path
 
 const Signup = () => {
-  const [currentPage, setCurrentPage] = useState(1); // 1 for Signup, 2 for Login
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [signupData, setSignupData] = useState({ username: '', email: '', password: '' });
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Navigate between Signup and Login pages
-  const handleNext = () => {
-    setCurrentPage(2);
-    setError(null);
-  };
-  
-  const handleBack = () => {
-    setCurrentPage(1);
+  const toggleAuthMode = () => {
+    setIsLogin(!isLogin);
     setError(null);
   };
 
-  // Handle input changes for both forms
-  const handleInputChange = (e, formType) => {
-    const { name, value } = e.target;
-    if (formType === 'login') {
-      setLoginData({ ...loginData, [name]: value });
-    } else if (formType === 'signup') {
-      setSignupData({ ...signupData, [name]: value });
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle Signup form submission
-  const handleSignupSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    
+
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/register`, signupData);
+      const endpoint = isLogin ? 'login' : 'register';
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/TravelBuddy/user/${endpoint}`,
+        isLogin ? { email: formData.email, password: formData.password } : formData
+      );
+
+      // After successful login/signup
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));
-        
-        // Redirect to cart if coming from checkout, otherwise to home
+
+        // Dispatch a login event
+        window.dispatchEvent(new Event('loginStatusChanged'));
+
         const returnPath = location.state?.from === '/cart' ? '/cart' : '/';
-        navigate(returnPath, { state: { from: 'signup' } });
+        navigate(returnPath, { state: { from: isLogin ? 'login' : 'signup' } });
       }
-    } catch (error) {
-      console.error('Signup failed:', error.response?.data || error.message);
-      setError(error.response?.data?.message || 'Signup failed. Please try again.');
+    } catch (err) {
+      setError(err.response?.data?.message ||
+        (isLogin ? 'Login failed. Please try again.' : 'Signup failed. Please try again.'));
     } finally {
       setLoading(false);
     }
   };
 
-  // Handle Login form submission
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/user/login`, loginData);
-      if (response.status === 200) {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
-        
-        // Redirect to cart if coming from checkout, otherwise to home
-        const returnPath = location.state?.from === '/cart' ? '/cart' : '/';
-        navigate(returnPath, { state: { from: 'login' } });
-      }
-    } catch (error) {
-      console.error('Login failed:', error.response?.data || error.message);
-      setError(error.response?.data?.message || 'Login failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Add fullscreen background effect
-  useEffect(() => {
-    document.body.classList.add('fullscreen-background');
-    return () => {
-      document.body.classList.remove('fullscreen-background');
-    };
-  }, []);
-
-  // Get appropriate welcome message based on where user came from
-  const getWelcomeMessage = () => {
+  const getHeaderText = () => {
     if (location.state?.from === '/cart') {
-      return {
-        heading: currentPage === 1 
-          ? 'Complete Your Booking' 
-          : 'Sign In to Checkout',
-        subheading: currentPage === 1
-          ? 'Create an account to proceed with your travel package'
-          : 'Log in to complete your purchase'
-      };
+      return isLogin
+        ? 'Sign In to Complete Your Booking'
+        : 'Create Account to Continue';
     }
-    
-    return {
-      heading: currentPage === 1
-        ? 'Welcome to Travel Buddy!'
-        : 'Welcome Back!',
-      subheading: currentPage === 1
-        ? 'Adventure awaits! Sign up now to start planning your next trip'
-        : 'The adventure continues. Log in to pick up where you left off'
-    };
+    return isLogin ? 'Welcome Back!' : 'Join Travel Buddy';
   };
 
-  const { heading, subheading } = getWelcomeMessage();
+  const getSubText = () => {
+    if (location.state?.from === '/cart') {
+      return isLogin
+        ? 'Log in to complete your purchase'
+        : 'Create an account to proceed with your travel package';
+    }
+    return isLogin
+      ? 'Sign in to continue your adventure'
+      : 'Start planning your next trip today';
+  };
 
   return (
-    <div className="book">
-      {loading && (
-        <div className="loader-overlay">
-          <div className="loader"></div>
-        </div>
-      )}
-      
-      <div className="flip-book">
-        {/* Signup Page */}
-        <div className={`flip ${currentPage === 1 ? 'active' : 'inactive'}`} id="p1">
-          <div className="back">
-            <div className="welcome-message">
-              <h1 className="head">
-                <span className="span">{heading}</span>
-              </h1>
-              <h2 className="head">
-                {subheading}
-              </h2>
-            </div>
-            <button className="next-btn" onClick={handleNext}>
-             New to Travel Buddy? Register
-            </button>
-          </div>
-          <div className="front">
-            <h2 className="login-head">Create Account</h2>
-            {error && <div className="alert alert-danger">{error}</div>}
-            <form onSubmit={handleSignupSubmit}>
-              <input
-                className="input"
-                type="text"
-                name="username"
-                placeholder="Username"
-                value={signupData.username}
-                onChange={(e) => handleInputChange(e, 'signup')}
-                required
-                minLength="3"
-              />
-              <input
-                className="input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={signupData.email}
-                onChange={(e) => handleInputChange(e, 'signup')}
-                required
-              />
-              <input
-                className="input"
-                type="password"
-                name="password"
-                placeholder="Password (min 6 characters)"
-                value={signupData.password}
-                onChange={(e) => handleInputChange(e, 'signup')}
-                required
-                minLength="6"
-              />
-              <button type="submit" className="submit-btn" disabled={loading}>
-                {loading ? 'Creating Account...' : 'Sign Up'}
-              </button>
-            </form>
-          </div>
-        </div>
+    <div style={{
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      padding: '20px 0',
+      position: 'relative'
+    }}>
+      <Container>
+        <Row className="justify-content-center">
+          <Col md={8} lg={7}>
+            <Card
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                color: 'white',
+                border: 'none',
+                backdropFilter: 'blur(5px)',
+                borderTopRightRadius: '15px',
+                borderBottomRightRadius: '15px',
+                boxShadow: 'inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.5)',
+                padding: '30px',
+                boxSizing: 'border-box',
+              }}
+            >
+              <Card.Body className="p-4">
+                <div className="text-center mb-4">
+                  <h2 style={{ color: 'white' }}>{getHeaderText()}</h2>
+                  <p style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{getSubText()}</p>
+                </div>
 
-        {/* Login Page */}
-        <div className={`flip ${currentPage === 2 ? 'active' : 'inactive'}`} id="p2">
-          <div className="back">
-            <div className="welcome-message">
-              <h1 className="head">
-                <span className="span">{heading}</span>
-              </h1>
-              <h2 className="head">
-                {subheading}
-              </h2>
-            </div>
-            <button className="back-btn" onClick={handleBack}>
-               Already registered? Login
-            </button>
-          </div>
-          <div className="front">
-            <h2 className="login-head">Login</h2>
-            {error && <div className="alert alert-danger">{error}</div>}
-            <form onSubmit={handleLoginSubmit}>
-              <input
-                className="input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={loginData.email}
-                onChange={(e) => handleInputChange(e, 'login')}
-                required
-              />
-              <input
-                className="input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={loginData.password}
-                onChange={(e) => handleInputChange(e, 'login')}
-                required
-              />
-              <button type="submit" className="submit-btn" disabled={loading}>
-                {loading ? 'Logging In...' : 'Login'}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+                {error && <Alert variant="danger">{error}</Alert>}
+
+                <Form onSubmit={handleSubmit}>
+                  {!isLogin && (
+                    <Form.Group className="mb-3">
+                      <Form.Label style={{ color: 'white' }}>Username</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                        minLength="3"
+                        style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', color: 'white', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                      />
+                    </Form.Group>
+                  )}
+
+                  <Form.Group className="mb-3">
+                    <Form.Label style={{ color: 'white' }}>Email address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      placeholder="Enter email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', color: 'white', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                    />
+                  </Form.Group>
+
+                  <Form.Group className="mb-4">
+                    <Form.Label style={{ color: 'white' }}>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                      minLength={isLogin ? "1" : "6"}
+                      style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', color: 'white', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                    />
+                    {!isLogin && (
+                      <Form.Text style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+                        At least 6 characters
+                      </Form.Text>
+                    )}
+                  </Form.Group>
+
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    className="w-100 mb-3"
+                    disabled={loading}
+                    style={{ backgroundColor: '#007bff', border: 'none' }}
+                  >
+                    {loading ? (
+                      <>
+                        <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                          className="me-2"
+                        />
+                        {isLogin ? 'Signing In...' : 'Creating Account...'}
+                      </>
+                    ) : (
+                      isLogin ? 'Sign In' : 'Sign Up'
+                    )}
+                  </Button>
+
+                  <div className="text-center">
+                    <Button
+                      variant="link"
+                      onClick={toggleAuthMode}
+                      style={{ color: 'rgba(255, 255, 255, 0.8)' }}
+                    >
+                      {isLogin
+                        ? "Don't have an account? Sign Up"
+                        : "Already have an account? Sign In"}
+                    </Button>
+                  </div>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

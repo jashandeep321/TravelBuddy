@@ -65,9 +65,10 @@ function CartPage() {
  
   const handleCheckout = async () => {
 
-    console.log('Razorpay Key:', process.env.REACT_APP_RAZORPAY_KEY_ID);
-  console.log('API URL:', process.env.REACT_APP_API_URL);
-  
+    console.log('Raw Key:', JSON.stringify(process.env.REACT_APP_RAZORPAY_KEY_ID));
+
+     const razorpayKey = process.env.REACT_APP_RAZORPAY_KEY_ID.trim();
+
     if (!user) {
       navigate('/Signup', {
         state: {
@@ -156,7 +157,7 @@ function CartPage() {
 
   return (
     <div className="container py-5">
-        <div className="d-flex justify-content-between align-items-center mb-4">
+        {/* <div className="d-flex justify-content-between align-items-center mb-4">
             <h2>Your Cart</h2>
             <div>
                 <button className="btn btn-outline-primary me-2" onClick={() => navigate('/orders')}>
@@ -165,7 +166,64 @@ function CartPage() {
                 </button>
                 <button className="btn btn-warning" onClick={clearCart}>Clear Cart</button>
             </div>
-        </div>
+        </div> */}
+        <div className="container py-5">
+  {/* Improved Cart Header */}
+  <div style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    marginBottom: '1.5rem',
+    paddingBottom: '1rem',
+    borderBottom: '1px solid #eee'
+  }}>
+    <h2 style={{ 
+      margin: '0 1rem 0.75rem 0',
+      flex: '1 1 auto',
+      minWidth: 'fit-content'
+    }}>Your Cart</h2>
+    
+    <div style={{
+      display: 'flex',
+      gap: '0.75rem',
+      flexWrap: 'wrap'
+    }}>
+      <button 
+        className="btn btn-outline-primary"
+        style={{
+          padding: '0.375rem 0.75rem',
+          fontSize: '0.875rem',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+        onClick={() => navigate('/orders')}
+      >
+        <i className="bi bi-clock-history" style={{ marginRight: '0.1rem' }}></i>
+        <span style={{ display: 'inline' }}>
+          {window.innerWidth > 768 ? 'Order History' : 'History'}
+        </span>
+      </button>
+      
+      <button 
+        className="btn btn-outline-danger"
+        style={{
+          padding: '0.375rem 0.75rem',
+          fontSize: '0.875rem',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+        onClick={clearCart}
+      >
+        <i className="bi bi-trash" style={{ marginRight: '0.1rem' }}></i>
+        Clear All
+      </button>
+    </div>
+  </div>
+
+  {/* Rest of your cart content... */}
+</div>
+        
 
         {cartItems.map((item) => (
             <div key={item._id} className="card mb-4 p-3 shadow-sm">
