@@ -67,7 +67,7 @@ function Navigation() {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:4444/TravelBuddy/itinerary', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/TravelBuddy/itinerary`, {
         destination,
         duration,
         preferences,
