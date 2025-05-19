@@ -18,6 +18,7 @@ import OrderHistory from './pages/OrderHistory'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Packages from './Components/Destination_pages/Packages' ;
 import PackageDetails from './Components/Destination_pages/PackageDetails';
+import SearchResults from './Components/SearchResults';
 
 function App() {
  
@@ -46,6 +47,7 @@ function App() {
 <Route path='/packages/:slug' element={<PackageDetails />}/>
 <Route path="/cart" element={<CartPage />} />
 <Route path="/orders" element={<OrderHistory />} />
+<Route path="/search" element={<SearchResults />} />
 
 </Routes>
         
