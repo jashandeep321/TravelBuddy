@@ -253,51 +253,6 @@ function Navigation() {
     </div>
   )}
   
-  {/* {itinerary && (
-    <div 
-      className="mt-4 p-3" 
-      style={{
-        backgroundColor: '#f8f9fa',
-        borderRadius: '10px'
-      }}
-    >
-      <h5 className="text-center mb-4">
-        <i className="bi bi-map me-2"></i>
-        Your {duration}-Day {destination} Itinerary
-      </h5>
-      
-      <div 
-        className="p-4" 
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-          lineHeight: '1.6'
-        }}
-      >
-        {itinerary.split('\n').map((paragraph, index) => (
-          <p 
-            key={index} 
-            className={paragraph.trim() === '' ? 'mb-0' : 'mb-3'}
-            style={{ color: '#333' }}
-          >
-            {paragraph.trim() === '' ? <br /> : paragraph}
-          </p>
-        ))}
-      </div>
-      
-      <div className="d-flex justify-content-center mt-4">
-        <Button 
-          variant="outline-info" 
-          onClick={() => navigator.clipboard.writeText(itinerary)}
-          style={{ minWidth: '150px' }}
-        >
-          <i className="bi bi-clipboard me-2"></i>
-          Copy Itinerary
-        </Button>
-      </div>
-    </div>
-  )} */}
 
 
   {itinerary && (
