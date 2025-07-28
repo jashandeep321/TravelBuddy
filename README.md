@@ -85,22 +85,22 @@ TravelBuddy/
 Here are some key UI screens from the Travel Buddy app:
 
 ### 🔐 Login Page
-![Login Page](./frontend/media/login.png)
+![Login Page](./Screenshots/login.png)
 
 ### 🏠 Home Page (Banner + Sections)
-![Home Banner](./frontend/media/banner.png)
-![Home Section](./frontend/media/home2.png)
-![Home Section 2](./frontend/media/home3.png)
+![Home Banner](./Screenshots/banner.png)
+![Home Section](./Screenshots//home2.png)
+![Home Section 2](./Screenshots//home3.png)
 
 ### 🎒 Itinerary Planning
-![Itinerary Page](./frontend/media/itinerary.png)
-![Alternate Itinerary View](./frontend/media/itinerary2.png)
+![Itinerary Page](./Screenshots//itinerary.png)
+![Alternate Itinerary View](./Screenshots/itinerary2.png)
 
 ### 🎁 Offers
-![Offers Page](./frontend/media/offers.png)
-![More Offers](./frontend/media/offers2.png)
+![Offers Page](./Screenshots/offers.png)
+![More Offers](./Screenshots/offers2.png)
 
 ### 📖 About Page
-![About Page](./frontend/media/about.png)
+![About Page](./Screenshots/about.png)
 
 
