@@ -1,5 +1,7 @@
 # 🌍 Travel Buddy: A Travel Guide App
 
+🔗 [Visit the Live Site](https://travelbuddy-7edk.onrender.com/)
+
 ## 📌 Objective
 Travel Buddy is an AI-powered travel itinerary platform designed to revolutionize how users plan and manage their trips. It provides a personalized, end-to-end travel planning experience, simplifying the entire process through intelligent recommendations based on user preferences, past travel history, and real-time data.
 
@@ -28,19 +30,21 @@ Travel Buddy is an AI-powered travel itinerary platform designed to revolutioniz
 ---
 
 ## 📁 Folder Structure (MERN Stack Based)
+```bash
 TravelBuddy/
-├── Backend/ # Node.js backend
-│ ├── routes/
-│ ├── Uploads/
-│ ├── models/
-│ ├──  middleware/
-│ └── index.js
+├── Backend/              # Node.js backend
+│   ├── routes/
+│   ├── Uploads/
+│   ├── models/
+│   ├── middleware/
+│   └── index.js
 │
-├── frontend/  # React frontend
-│ ├── components/
-│ ├── pages/
-│ ├── media/
-│ └── Context/
+├── frontend/             # React frontend
+│   ├── components/
+│   ├── pages/
+│   ├── media/
+│   └── Context/
+│
 ├── public/
 ├── .env
 ├── package.json
