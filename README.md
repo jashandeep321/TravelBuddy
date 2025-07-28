@@ -28,7 +28,6 @@ Travel Buddy is an AI-powered travel itinerary platform designed to revolutioniz
 - 🌐 RESTful API integration between frontend and backend
 
 ---
-
 ## 📁 Folder Structure (MERN Stack Based)
 ```bash
 TravelBuddy/
@@ -49,7 +48,7 @@ TravelBuddy/
 ├── .env
 ├── package.json
 └── README.md
-
+```
 
 ---
 
